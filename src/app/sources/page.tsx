@@ -12,9 +12,9 @@ export default function SourcesPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Transparence"
-        title="Sources"
-        description="Tout ce qui est présenté sur ce site devrait pouvoir être tracé jusqu'à une source vérifiable."
+        eyebrow={t("transparency.eyebrow")}
+        title={t("nav.sources")}
+        description={t("pages.sources.description")}
       />
 
       <section className="mb-12">

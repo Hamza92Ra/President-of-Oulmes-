@@ -14,9 +14,9 @@ export default function BiographyPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow={t("nav.biography")}
+        eyebrow={t("pages.biography.eyebrow")}
         title="Mohamed Achrourou"
-        description="Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous."
+        description={t("pages.biography.description")}
       />
 
       <ImagePlaceholder
@@ -37,20 +37,16 @@ export default function BiographyPage() {
           {t("biography.professionalPath")}
         </h2>
         <p className="text-ink/80 leading-relaxed mb-3">
-          Ingénieur topographe / géomètre, avec une expérience professionnelle
-          associée à l&apos;administration topographique et à
-          l&apos;immatriculation foncière.
+          {t("pages.biography.professionalIntro")}
         </p>
         <p className="text-ink/80 leading-relaxed mb-3">
-          Expérience professionnelle rapportée à Khénifra, Casablanca, Tétouan
-          et Rabat, avant l&apos;exercice en pratique privée de géomètre.
+          {t("pages.biography.professionalExperience")}
         </p>
         <p className="text-ink/80 leading-relaxed mb-3">
-          Présidence du Conseil national de l&apos;Ordre des ingénieurs
-          géomètres-topographes, 2012–2015.
+          {t("pages.biography.professionalPresidency")}
         </p>
         <p className="text-sm text-ink/50 italic">
-          Formation d&apos;ingénieur — établissement à vérifier.
+          {t("pages.biography.engineeringNote")}
         </p>
       </section>
 
@@ -62,28 +58,22 @@ export default function BiographyPage() {
         </h2>
         <ul className="space-y-3 text-ink/80">
           <li>
-            <strong>2017</strong> — Élection rapportée à la présidence du
-            groupe parlementaire PAM à la Chambre des Représentants.
+            <strong>2017</strong> — {t("pages.biography.political2017")}
           </li>
           <li>
-            <strong>2019</strong> — Présidence de la fédération nationale
-            associée aux éleveurs de bovins Oulmès-Zaër.
+            <strong>2019</strong> — {t("pages.biography.political2019")}
           </li>
           <li>
-            <strong>2021–2026</strong> — Membre de la Chambre des
-            Représentants pour la circonscription de Khémisset–Oulmès.
+            <strong>2021–2026</strong> — {t("pages.biography.political2021")}
           </li>
           <li>
-            <strong>2022</strong> — Élection au poste de secrétaire
-            provincial du PAM à Khémisset.
+            <strong>2022</strong> — {t("pages.biography.political2022")}
           </li>
           <li>
-            <strong>À vérifier</strong> — Président de la commune d&apos;Oulmès
-            (date d&apos;entrée en fonction à confirmer).
+            <strong>{t("common.toBeVerified")}</strong> — {t("pages.biography.politicalToVerify")}
           </li>
           <li>
-            <strong>2026</strong> — Candidat du PAM pour la circonscription de
-            Khémisset–Oulmès.
+            <strong>2026</strong> — {t("pages.biography.political2026")}
           </li>
         </ul>
       </section>

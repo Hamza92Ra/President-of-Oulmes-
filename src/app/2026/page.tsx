@@ -12,9 +12,9 @@ export default function Election2026Page() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="2026"
-        title="Khémisset–Oulmès"
-        description="Élections législatives marocaines de 2026."
+        eyebrow={t("election2026.year")}
+        title={t("election2026.constituency")}
+        description={t("pages.election2026.description")}
       />
 
       <ImageGallery

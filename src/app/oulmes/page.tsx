@@ -43,9 +43,9 @@ export default function OulmesPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="العمل في أولماس"
-        title="Action à Oulmès"
-        description="Ces projets et initiatives sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet."
+        eyebrow={t("pages.oulmes.eyebrow")}
+        title={t("pages.oulmes.title")}
+        description={t("pages.oulmes.description")}
       />
 
       <ImagePlaceholder
@@ -63,7 +63,7 @@ export default function OulmesPage() {
 
       <section className="mb-16">
         <h2 className="text-xl font-semibold text-ink mb-6 tracking-tight">
-          Projets communaux documentés
+          {t("pages.oulmes.projectsTitle")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
@@ -80,7 +80,7 @@ export default function OulmesPage() {
 
       <section className="mt-16">
         <h2 className="text-xl font-semibold text-ink mb-6 tracking-tight">
-          Thématiques locales
+          {t("pages.oulmes.themesTitle")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {oulmesAreas.map((area) => (

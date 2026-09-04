@@ -173,6 +173,7 @@ export const translations = {
             party: "Parti",
             constituency: "Circonscription",
             toVerify: "Détails officiels de la liste des candidats à vérifier.",
+            year: "2026",
         },
         pages: {
             waterEnvironment: "Voir aussi le projet des",
@@ -240,6 +241,39 @@ export const translations = {
                 eyebrow: "Oulmès",
                 title: "Projets et initiatives documentés",
                 description: "Ces projets sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet.",
+            },
+            oulmes: {
+                eyebrow: "Oulmès",
+                title: "Action à Oulmès",
+                description: "Ces projets et initiatives sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet.",
+                projectsTitle: "Projets communaux documentés",
+                themesTitle: "Thématiques locales",
+            },
+            sources: {
+                description: "Tout ce qui est présenté sur ce site devrait pouvoir être tracé jusqu'à une source vérifiable.",
+            },
+            media: {
+                title: "Couverture médiatique et controverses publiques",
+                description: "Cette page distingue les allégations et litiges rapportés des faits établis.",
+            },
+            election2026: {
+                description: "Élections législatives marocaines de 2026.",
+            },
+            biography: {
+                eyebrow: "Parcours",
+                description: "Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous.",
+                professionalPath: "Parcours professionnel",
+                professionalIntro: "Ingénieur topographe / géomètre, avec une expérience professionnelle associée à l'administration topographique et à l'immatriculation foncière.",
+                professionalExperience: "Expérience professionnelle rapportée à Khénifra, Casablanca, Tétouan et Rabat, avant l'exercice en pratique privée de géomètre.",
+                professionalPresidency: "Présidence du Conseil national de l'Ordre des ingénieurs géomètres-topographes, 2012–2015.",
+                engineeringNote: "Formation d'ingénieur — établissement à vérifier.",
+                politicalPath: "Parcours politique",
+                political2017: "Élection rapportée à la présidence du groupe parlementaire PAM à la Chambre des Représentants.",
+                political2019: "Présidence de la fédération nationale associée aux éleveurs de bovins Oulmès-Zaër.",
+                political2021: "Membre de la Chambre des Représentants pour la circonscription de Khémisset–Oulmès.",
+                political2022: "Élection au poste de secrétaire provincial du PAM à Khémisset.",
+                politicalToVerify: "Président de la commune d'Oulmès (date d'entrée en fonction à confirmer).",
+                political2026: "Candidat du PAM pour la circonscription de Khémisset–Oulmès.",
             },
         },
     },
@@ -406,12 +440,19 @@ export const translations = {
         biography: {
             professionalPath: "المسار المهني",
             politicalPath: "المسار السياسي",
+            eyebrow: "المسار",
+            description: "السيرة المهنية والسياسية — مهندس مساحة، شغل مسؤوليات مهنية وجمعوية وسياسية موثقة أدناه.",
+            professionalIntro: "مهندس مساحة / جيوديسيا، مع خبرة مهنية مرتبطة بالإدارة الطوبوغرافية والتسجيل العقاري.",
+            professionalExperience: "الخبرة المهنية المُبلَّغ عنها في خنيفرة والدار البيضاء وتطوان والرباط، قبل ممارسة الجيوديسيا في القطاع الخاص.",
+            professionalPresidency: "رئاسة المجلس الوطني لنقابة مهندسي المساحة والطوبوغرافيا، 2012–2015.",
+            engineeringNote: "تكوين مهندس — المؤسسة التعليمية يُرجى التحقق منها.",
         },
         election2026: {
             candidate: "مرشح",
             party: "الحزب",
             constituency: "الدائرة",
             toVerify: "يُرجى التحقق من التفاصيل الرسمية لقائمة المرشحين.",
+            year: "٢٠٢٦",
         },
         pages: {
             waterEnvironment: "انظر أيضاً مشروع",
@@ -479,6 +520,27 @@ export const translations = {
                 eyebrow: "أولماس",
                 title: "المشاريع والمبادرات الموثقة",
                 description: "هذه المشاريع مرتبطة بجماعة أولماس خلال ولاية أشرورو كرئيس للجماعة؛ هذا لا يعني بالضرورة أنه نفذ شخصياً كل مشروع.",
+            },
+            oulmes: {
+                eyebrow: "أولماس",
+                title: "العمل في أولماس",
+                description: "هذه المشاريع والمبادرات مرتبطة بجماعة أولماس خلال ولاية أشرورو كرئيس للجماعة؛ هذا لا يعني بالضرورة أنه نفذ شخصياً كل مشروع.",
+                projectsTitle: "المشاريع الجماعية الموثقة",
+                themesTitle: "المواضيع المحلية",
+            },
+            sources: {
+                description: "كل ما يتم تقديمه على هذا الموقع يجب أن يكون قابلاً للتتبع إلى مصدر يمكن التحقق منه.",
+            },
+            media: {
+                title: "التغطية الإعلامية والنزاعات العامة",
+                description: "توضح هذه الصفحة الفرق بين الادعاءات والنزاعات المُبلَّغ عنها والحقائق الثابتة.",
+            },
+            election2026: {
+                description: "الانتخابات التشريعية المغربية لسنة 2026.",
+            },
+            biography: {
+                eyebrow: "المسار",
+                description: "السيرة المهنية والسياسية لمحمد أشرورو.",
             },
         },
     },
@@ -653,6 +715,7 @@ export const translations = {
             party: "Party",
             constituency: "Constituency",
             toVerify: "Official candidate list details to be verified.",
+            year: "2026",
         },
         pages: {
             waterEnvironment: "See also the project of",
@@ -720,6 +783,27 @@ export const translations = {
                 eyebrow: "Oulmès",
                 title: "Documented projects and initiatives",
                 description: "These projects are associated with the Oulmès municipality during Achrourou's term as municipal president; this does not necessarily mean he personally executed each project.",
+            },
+            oulmes: {
+                eyebrow: "Oulmès",
+                title: "Action in Oulmès",
+                description: "These projects and initiatives are associated with the Oulmès municipality during Achrourou's term as municipal president; this does not necessarily mean he personally executed each project.",
+                projectsTitle: "Documented municipal projects",
+                themesTitle: "Local themes",
+            },
+            sources: {
+                description: "Everything presented on this site should be traceable to a verifiable source.",
+            },
+            media: {
+                title: "Media coverage and public disputes",
+                description: "This page distinguishes reported allegations and disputes from established facts.",
+            },
+            election2026: {
+                description: "2026 Moroccan legislative elections.",
+            },
+            biography: {
+                eyebrow: "Background",
+                description: "Professional and political biography of Mohamed Achrourou.",
             },
         },
     },

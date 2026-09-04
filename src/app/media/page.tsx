@@ -9,9 +9,9 @@ export default function MediaPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Transparence"
-        title="Couverture médiatique et controverses publiques"
-        description="Cette page distingue les allégations et litiges rapportés des faits établis."
+        eyebrow={t("transparency.eyebrow")}
+        title={t("pages.media.title")}
+        description={t("pages.media.description")}
       />
 
       <ImageGallery
