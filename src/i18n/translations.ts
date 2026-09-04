@@ -15,33 +15,19 @@ export const translations = {
         },
         footer: {
             updatedAt: "Dernière mise à jour :",
-            sourcesNote:
-                "Les informations sont présentées avec leurs sources lorsqu'elles sont disponibles.",
+            sourcesNote: "Les informations sont présentées avec leurs sources lorsqu'elles sont disponibles.",
         },
         hero: {
             role: "Ingénieur · Élu local · Parlementaire",
-            intro:
-                "Découvrez son parcours professionnel, son expérience politique, son activité parlementaire et les initiatives documentées au niveau local.",
+            intro: "Découvrez son parcours professionnel, son expérience politique, son activité parlementaire et les initiatives documentées au niveau local.",
             ctaBiography: "Découvrir le parcours",
             ctaParliament: "Voir l'activité parlementaire",
         },
         pillars: {
-            parliament: {
-                title: "Parlement",
-                description: "Son activité et bilan parlementaires.",
-            },
-            oulmes: {
-                title: "Oulmès",
-                description: "Activité au niveau de la commune locale.",
-            },
-            territory: {
-                title: "Territoire",
-                description: "Infrastructure, agriculture, eau et développement.",
-            },
-            biography: {
-                title: "Parcours",
-                description: "Biographie professionnelle et politique.",
-            },
+            parliament: { title: "Parlement", description: "Son activité et bilan parlementaires." },
+            oulmes: { title: "Oulmès", description: "Activité au niveau de la commune locale." },
+            territory: { title: "Territoire", description: "Infrastructure, agriculture, eau et développement." },
+            biography: { title: "Parcours", description: "Biographie professionnelle et politique." },
         },
         common: {
             loading: "Chargement...",
@@ -52,6 +38,8 @@ export const translations = {
             seeAll: "Voir tout →",
             documented: "Documenté",
             toBeVerified: "À vérifier",
+            dateLabel: "Date",
+            ministryLabel: "Ministère",
         },
         home: {
             territoryTitle: "Territoire — Khémisset & Oulmès",
@@ -61,41 +49,28 @@ export const translations = {
             seeOulmesAction: "Voir l'action à Oulmès →",
             documentedProjects: "Projets communaux documentés",
             localThemes: "Thématiques locales",
-            sourcesIntro:
-                "Tout ce que vous lisez sur ce site devrait être traçable.",
+            sourcesIntro: "Tout ce que vous lisez sur ce site devrait être traçable.",
             exploreSources: "Explorer les sources",
         },
         stats: {
             parliamentaryQuestions: "Questions parlementaires",
             period2021_2026: "2021–2026",
-            presidencyEngineers:
-                "Présidence du Conseil national des ingénieurs géomètres-topographes",
+            presidencyEngineers: "Présidence du Conseil national des ingénieurs géomètres-topographes",
             period2012_2015: "2012–2015",
-            pamGroupLeader:
-                "Élection rapportée à la tête du groupe parlementaire PAM",
+            pamGroupLeader: "Élection rapportée à la tête du groupe parlementaire PAM",
             year2017: "2017",
             pamCandidate: "Candidat PAM",
             khemissetOulmes: "Khémisset–Oulmès",
         },
         storyFlow: {
             eyebrow: "Parcours",
-            title:
-                "Un parcours entre expertise, territoire et service public",
-            steps: [
-                "Ingénierie",
-                "Expertise professionnelle",
-                "Expérience politique",
-                "Parlement",
-                "Oulmès",
-                "Candidature 2026",
-            ],
+            title: "Un parcours entre expertise, territoire et service public",
+            steps: ["Ingénierie", "Expertise professionnelle", "Expérience politique", "Parlement", "Oulmès", "Candidature 2026"],
         },
         parliament: {
             title: "Activité parlementaire",
-            description:
-                "{count} questions parlementaires sont actuellement recensées sur le profil de la Chambre des Représentants pour la législature 2021–2026.",
-            noQuestions:
-                "Aucune question dans cette catégorie pour le moment.",
+            description: "{count} questions parlementaires sont actuellement recensées sur le profil de la Chambre des Représentants pour la législature 2021–2026.",
+            noQuestions: "Aucune question dans cette catégorie pour le moment.",
             categories: {
                 ALL: "Tous",
                 Infrastructure: "Infrastructure",
@@ -119,14 +94,10 @@ export const translations = {
         },
         forum: {
             editionDetails: "Détails de l'édition {year}",
-            editionToVerify:
-                "Détails spécifiques de l'édition {year} du Forum de développement local d'Oulmès — à vérifier.",
-            reportedThemes:
-                "Thématiques généralement rapportées dans la couverture du forum",
+            editionToVerify: "Détails spécifiques de l'édition {year} du Forum de développement local d'Oulmès — à vérifier.",
+            reportedThemes: "Thématiques généralement rapportées dans la couverture du forum",
         },
-        map: {
-            loading: "Chargement de la carte...",
-        },
+        map: { loading: "Chargement de la carte..." },
         contact: {
             email: "Email",
             phone: "Téléphone",
@@ -135,25 +106,26 @@ export const translations = {
         },
         transparency: {
             title: "Registre public",
-            description:
-                "Ce site vise à donner une vue transparente, sourcée et vérifiable du parcours et de l'activité de Mohamed Achrourou.",
+            description: "Ce site vise à donner une vue transparente, sourcée et vérifiable du parcours et de l'activité de Mohamed Achrourou.",
             corrections: "Corrections",
-            correctionsText:
-                "Si une information présentée sur ce site est inexacte ou incomplète, merci de nous contacter afin qu'elle puisse être corrigée.",
+            correctionsText: "Si une information présentée sur ce site est inexacte ou incomplète, merci de nous contacter afin qu'elle puisse être corrigée.",
+            eyebrow: "Transparence",
         },
         sources: {
             howWeSource: "Comment nous sourçons l'information",
-            method1:
-                "Les sources officielles du Parlement sont priorisées pour l'activité parlementaire.",
-            method2:
-                "Les sources municipales officielles sont priorisées pour les projets communaux.",
-            method3:
-                "Les sources officielles du PAM sont utilisées pour les déclarations du parti.",
-            method4:
-                "Les médias réputés sont utilisés pour le contexte historique et le reportage.",
+            method1: "Les sources officielles du Parlement sont priorisées pour l'activité parlementaire.",
+            method2: "Les sources municipales officielles sont priorisées pour les projets communaux.",
+            method3: "Les sources officielles du PAM sont utilisées pour les déclarations du parti.",
+            method4: "Les médias réputés sont utilisés pour le contexte historique et le reportage.",
             method5: "Les allégations contestées sont clairement identifiées.",
-            method6:
-                "Les allégations ne sont jamais présentées comme des faits établis.",
+            method6: "Les allégations ne sont jamais présentées comme des faits établis.",
+            categories: {
+                officialParliament: "Parlement officiel",
+                pam: "PAM",
+                oulmesCommune: "Commune d'Oulmès",
+                media: "Médias",
+                publicDocuments: "Documents publics",
+            },
         },
         media: {
             reported: "Ce qui a été rapporté",
@@ -161,8 +133,14 @@ export const translations = {
             currentStatus: "Statut actuel",
             notFound: "non trouvée dans les sources examinées",
             toVerify: "À vérifier",
-            updateNote:
-                "Cette page sera mise à jour si une réponse officielle vérifiée devient disponible. Les allégations rapportées ne constituent pas des faits établis.",
+            updateNote: "Cette page sera mise à jour si une réponse officielle vérifiée devient disponible. Les allégations rapportées ne constituent pas des faits établis.",
+            disputeReported: "Litige rapporté",
+            disputeTitle: "Litige concernant un marché public — gare routière d'Oulmès (2025)",
+            whatWasReported: "Ce qui a été rapporté",
+            disputeDescription: "Des reportages médiatiques en 2025 ont décrit un litige concernant la procédure de passation de marché du projet de gare routière d'Oulmès et rapporté une plainte relative à la procédure d'appel d'offres.",
+            responseNotFound: "Réponse officielle : non trouvée dans les sources examinées.",
+            disclaimer: "Cette page sera mise à jour si une réponse officielle vérifiée devient disponible. Les allégations rapportées ne constituent pas des faits établis.",
+            noOtherControversies: "Aucune autre controverse documentée n'a été identifiée dans les sources examinées à ce jour.",
         },
         biography: {
             professionalPath: "Parcours professionnel",
@@ -251,10 +229,12 @@ export const translations = {
             },
             sources: {
                 description: "Tout ce qui est présenté sur ce site devrait pouvoir être tracé jusqu'à une source vérifiable.",
+                eyebrow: "Transparence",
             },
             media: {
                 title: "Couverture médiatique et controverses publiques",
                 description: "Cette page distingue les allégations et litiges rapportés des faits établis.",
+                eyebrow: "Transparence",
             },
             election2026: {
                 description: "Élections législatives marocaines de 2026.",
@@ -262,12 +242,10 @@ export const translations = {
             biography: {
                 eyebrow: "Parcours",
                 description: "Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous.",
-                professionalPath: "Parcours professionnel",
                 professionalIntro: "Ingénieur topographe / géomètre, avec une expérience professionnelle associée à l'administration topographique et à l'immatriculation foncière.",
                 professionalExperience: "Expérience professionnelle rapportée à Khénifra, Casablanca, Tétouan et Rabat, avant l'exercice en pratique privée de géomètre.",
                 professionalPresidency: "Présidence du Conseil national de l'Ordre des ingénieurs géomètres-topographes, 2012–2015.",
                 engineeringNote: "Formation d'ingénieur — établissement à vérifier.",
-                politicalPath: "Parcours politique",
                 political2017: "Élection rapportée à la présidence du groupe parlementaire PAM à la Chambre des Représentants.",
                 political2019: "Présidence de la fédération nationale associée aux éleveurs de bovins Oulmès-Zaër.",
                 political2021: "Membre de la Chambre des Représentants pour la circonscription de Khémisset–Oulmès.",
@@ -296,28 +274,15 @@ export const translations = {
         },
         hero: {
             role: "مهندس · منتخب محلي · برلماني",
-            intro:
-                "اكتشف مساره المهني، تجربته السياسية، نشاطه البرلماني والمبادرات الموثقة على المستوى المحلي.",
+            intro: "اكتشف مساره المهني، تجربته السياسية، نشاطه البرلماني والمبادرات الموثقة على المستوى المحلي.",
             ctaBiography: "اكتشف المسار",
             ctaParliament: "شاهد النشاط البرلماني",
         },
         pillars: {
-            parliament: {
-                title: "البرلمان",
-                description: "نشاطه وحصيلته البرلمانية.",
-            },
-            oulmes: {
-                title: "أولماس",
-                description: "النشاط على مستوى الجماعة المحلية.",
-            },
-            territory: {
-                title: "التراب",
-                description: "البنية التحتية، الفلاحة، الماء والتنمية.",
-            },
-            biography: {
-                title: "المسار",
-                description: "السيرة المهنية والسياسية.",
-            },
+            parliament: { title: "البرلمان", description: "نشاطه وحصيلته البرلمانية." },
+            oulmes: { title: "أولماس", description: "النشاط على مستوى الجماعة المحلية." },
+            territory: { title: "التراب", description: "البنية التحتية، الفلاحة، الماء والتنمية." },
+            biography: { title: "المسار", description: "السيرة المهنية والسياسية." },
         },
         common: {
             loading: "جار التحميل...",
@@ -328,6 +293,8 @@ export const translations = {
             seeAll: "عرض الكل →",
             documented: "موثق",
             toBeVerified: "يُرجى التحقق",
+            dateLabel: "التاريخ",
+            ministryLabel: "الوزارة",
         },
         home: {
             territoryTitle: "التراب — الخميسات وأولماس",
@@ -337,18 +304,15 @@ export const translations = {
             seeOulmesAction: "عرض العمل في أولماس →",
             documentedProjects: "المشاريع الجماعية الموثقة",
             localThemes: "المواضيع المحلية",
-            sourcesIntro:
-                "كل ما تقرأه على هذا الموقع يجب أن يكون قابلاً للتتبع.",
+            sourcesIntro: "كل ما تقرأه على هذا الموقع يجب أن يكون قابلاً للتتبع.",
             exploreSources: "استكشف المصادر",
         },
         stats: {
             parliamentaryQuestions: "الأسئلة البرلمانية",
             period2021_2026: "٢٠٢١–٢٠٢٦",
-            presidencyEngineers:
-                "رئاسة المجلس الوطني للمهندسين الطوبوغرافيين",
+            presidencyEngineers: "رئاسة المجلس الوطني للمهندسين الطوبوغرافيين",
             period2012_2015: "٢٠١٢–٢٠١٥",
-            pamGroupLeader:
-                "انتخاب مُبلَّغ عنه على رأس الفريق البرلماني للأصالة والمعاصرة",
+            pamGroupLeader: "انتخاب مُبلَّغ عنه على رأس الفريق البرلماني للأصالة والمعاصرة",
             year2017: "٢٠١٧",
             pamCandidate: "مرشح حزب الأصالة والمعاصرة",
             khemissetOulmes: "الخميسات–أولماس",
@@ -356,19 +320,11 @@ export const translations = {
         storyFlow: {
             eyebrow: "المسار",
             title: "مسار بين الخبرة والتراب والخدمة العامة",
-            steps: [
-                "الهندسة",
-                "الخبرة المهنية",
-                "التجربة السياسية",
-                "البرلمان",
-                "أولماس",
-                "ترشيح ٢٠٢٦",
-            ],
+            steps: ["الهندسة", "الخبرة المهنية", "التجربة السياسية", "البرلمان", "أولماس", "ترشيح ٢٠٢٦"],
         },
         parliament: {
             title: "النشاط البرلماني",
-            description:
-                "يتم حالياً إحصاء {count} سؤالاً برلمانياً في ملف الغرفة للفترة التشريعية ٢٠٢١–٢٠٢٦.",
+            description: "يتم حالياً إحصاء {count} سؤالاً برلمانياً في ملف الغرفة للفترة التشريعية ٢٠٢١–٢٠٢٦.",
             noQuestions: "لا توجد أسئلة في هذا التصنيف حالياً.",
             categories: {
                 ALL: "الكل",
@@ -393,14 +349,10 @@ export const translations = {
         },
         forum: {
             editionDetails: "تفاصيل دورة {year}",
-            editionToVerify:
-                "تفاصيل محددة لدورة {year} لمنتدى التنمية المحلية بأولماس — يُرجى التحقق.",
-            reportedThemes:
-                "المواضيع المُبلَّغ عنها عادةً في تغطية المنتدى",
+            editionToVerify: "تفاصيل محددة لدورة {year} لمنتدى التنمية المحلية بأولماس — يُرجى التحقق.",
+            reportedThemes: "المواضيع المُبلَّغ عنها عادةً في تغطية المنتدى",
         },
-        map: {
-            loading: "جار تحميل الخريطة...",
-        },
+        map: { loading: "جار تحميل الخريطة..." },
         contact: {
             email: "البريد الإلكتروني",
             phone: "الهاتف",
@@ -409,22 +361,17 @@ export const translations = {
         },
         transparency: {
             title: "السجل العام",
-            description:
-                "يهدف هذا الموقع إلى تقديم رؤية شفافة وموثقة وقابلة للتحقق من مسار ونشاط محمد أشرورو.",
+            description: "يهدف هذا الموقع إلى تقديم رؤية شفافة وموثقة وقابلة للتحقق من مسار ونشاط محمد أشرورو.",
             corrections: "التصحيحات",
-            correctionsText:
-                "إذا كانت المعلومات المعروضة على هذا الموقع غير دقيقة أو ناقصة، يرجى الاتصال بنا لتصحيحها.",
+            correctionsText: "إذا كانت المعلومات المعروضة على هذا الموقع غير دقيقة أو ناقصة، يرجى الاتصال بنا لتصحيحها.",
+            eyebrow: "الشفافية",
         },
         sources: {
             howWeSource: "كيف نستقصي المعلومات",
-            method1:
-                "تُعطى الأولوية للمصادر الرسمية للبرلمان فيما يتعلق بالنشاط البرلماني.",
-            method2:
-                "تُعطى الأولوية للمصادر الجماعية الرسمية فيما يتعلق بالمشاريع الجماعية.",
-            method3:
-                "تُستخدم المصادر الرسمية للأصالة والمعاصرة للتصريحات الحزبية.",
-            method4:
-                "تُستخدم وسائل الإعلام الموثوقة للسياق التاريخي والتغطية الإعلامية.",
+            method1: "تُعطى الأولوية للمصادر الرسمية للبرلمان فيما يتعلق بالنشاط البرلماني.",
+            method2: "تُعطى الأولوية للمصادر الجماعية الرسمية فيما يتعلق بالمشاريع الجماعية.",
+            method3: "تُستخدم المصادر الرسمية للأصالة والمعاصرة للتصريحات الحزبية.",
+            method4: "تُستخدم وسائل الإعلام الموثوقة للسياق التاريخي والتغطية الإعلامية.",
             method5: "يتم تحديد الادعاءات المُثارَة بوضوح.",
             method6: "لا تُعرض الادعاءات أبداً كحقائق ثابتة.",
         },
@@ -434,18 +381,11 @@ export const translations = {
             currentStatus: "الوضعية الحالية",
             notFound: "غير موجودة في المصادر المدروسة",
             toVerify: "يُرجى التحقق",
-            updateNote:
-                "سيتم تحديث هذه الصفحة إذا أصبح رد رسمي مُتحقَّق منه متاحاً. الادعاءات المُبلَّغ عنها لا تشكل حقائق ثابتة.",
+            updateNote: "سيتم تحديث هذه الصفحة إذا أصبح رد رسمي مُتحقَّق منه متاحاً. الادعاءات المُبلَّغ عنها لا تشكل حقائق ثابتة.",
         },
         biography: {
             professionalPath: "المسار المهني",
             politicalPath: "المسار السياسي",
-            eyebrow: "المسار",
-            description: "السيرة المهنية والسياسية — مهندس مساحة، شغل مسؤوليات مهنية وجمعوية وسياسية موثقة أدناه.",
-            professionalIntro: "مهندس مساحة / جيوديسيا، مع خبرة مهنية مرتبطة بالإدارة الطوبوغرافية والتسجيل العقاري.",
-            professionalExperience: "الخبرة المهنية المُبلَّغ عنها في خنيفرة والدار البيضاء وتطوان والرباط، قبل ممارسة الجيوديسيا في القطاع الخاص.",
-            professionalPresidency: "رئاسة المجلس الوطني لنقابة مهندسي المساحة والطوبوغرافيا، 2012–2015.",
-            engineeringNote: "تكوين مهندس — المؤسسة التعليمية يُرجى التحقق منها.",
         },
         election2026: {
             candidate: "مرشح",
@@ -530,17 +470,29 @@ export const translations = {
             },
             sources: {
                 description: "كل ما يتم تقديمه على هذا الموقع يجب أن يكون قابلاً للتتبع إلى مصدر يمكن التحقق منه.",
+                eyebrow: "الشفافية",
             },
             media: {
                 title: "التغطية الإعلامية والنزاعات العامة",
                 description: "توضح هذه الصفحة الفرق بين الادعاءات والنزاعات المُبلَّغ عنها والحقائق الثابتة.",
+                eyebrow: "الشفافية",
             },
             election2026: {
                 description: "الانتخابات التشريعية المغربية لسنة 2026.",
             },
             biography: {
                 eyebrow: "المسار",
-                description: "السيرة المهنية والسياسية لمحمد أشرورو.",
+                description: "السيرة المهنية والسياسية — مهندس مساحة، شغل مسؤوليات مهنية وجمعوية وسياسية موثقة أدناه.",
+                professionalIntro: "مهندس مساحة / جيوديسيا، مع خبرة مهنية مرتبطة بالإدارة الطوبوغرافية والتسجيل العقاري.",
+                professionalExperience: "الخبرة المهنية المُبلَّغ عنها في خنيفرة والدار البيضاء وتطوان والرباط، قبل ممارسة الجيوديسيا في القطاع الخاص.",
+                professionalPresidency: "رئاسة المجلس الوطني لنقابة مهندسي المساحة والطوبوغرافيا، 2012–2015.",
+                engineeringNote: "تكوين مهندس — المؤسسة التعليمية يُرجى التحقق منها.",
+                political2017: "انتخاب مُبلَّغ عنه لرئاسة الفريق البرلماني للأصالة والمعاصرة بمجلس النواب.",
+                political2019: "رئاسة الفدرالية الوطنية المرتبطة بمربي الماشية سلالة أولماس-زاير.",
+                political2021: "عضو مجلس النواب للدائرة الانتخابية الخميسات–أولماس.",
+                political2022: "انتخاب في منصب أمين إقليمي للأصالة والمعاصرة بالخميسات.",
+                politicalToVerify: "رئيس جماعة أولماس (تاريخ تولي المنصب يُرجى التحقق منه).",
+                political2026: "مرشح الأصالة والمعاصرة للدائرة الانتخابية الخميسات–أولماس.",
             },
         },
     },
@@ -559,33 +511,19 @@ export const translations = {
         },
         footer: {
             updatedAt: "Last updated:",
-            sourcesNote:
-                "Information is presented with its sources when available.",
+            sourcesNote: "Information is presented with its sources when available.",
         },
         hero: {
             role: "Engineer · Local elected official · Member of Parliament",
-            intro:
-                "Discover his professional background, political experience, parliamentary activity and documented local initiatives.",
+            intro: "Discover his professional background, political experience, parliamentary activity and documented local initiatives.",
             ctaBiography: "Discover his background",
             ctaParliament: "View parliamentary activity",
         },
         pillars: {
-            parliament: {
-                title: "Parliament",
-                description: "His parliamentary activity and record.",
-            },
-            oulmes: {
-                title: "Oulmès",
-                description: "Activity at the local municipality level.",
-            },
-            territory: {
-                title: "Territory",
-                description: "Infrastructure, agriculture, water and development.",
-            },
-            biography: {
-                title: "Background",
-                description: "Professional and political biography.",
-            },
+            parliament: { title: "Parliament", description: "His parliamentary activity and record." },
+            oulmes: { title: "Oulmès", description: "Activity at the local municipality level." },
+            territory: { title: "Territory", description: "Infrastructure, agriculture, water and development." },
+            biography: { title: "Background", description: "Professional and political biography." },
         },
         common: {
             loading: "Loading...",
@@ -596,6 +534,8 @@ export const translations = {
             seeAll: "View all →",
             documented: "Documented",
             toBeVerified: "To be verified",
+            dateLabel: "Date",
+            ministryLabel: "Ministry",
         },
         home: {
             territoryTitle: "Territory — Khémisset & Oulmès",
@@ -605,39 +545,27 @@ export const translations = {
             seeOulmesAction: "View action in Oulmès →",
             documentedProjects: "Documented municipal projects",
             localThemes: "Local themes",
-            sourcesIntro:
-                "Everything you read on this site should be traceable.",
+            sourcesIntro: "Everything you read on this site should be traceable.",
             exploreSources: "Explore sources",
         },
         stats: {
             parliamentaryQuestions: "Parliamentary questions",
             period2021_2026: "2021–2026",
-            presidencyEngineers:
-                "Presidency of the National Council of Surveying Engineers",
+            presidencyEngineers: "Presidency of the National Council of Surveying Engineers",
             period2012_2015: "2012–2015",
-            pamGroupLeader:
-                "Reported election as head of PAM parliamentary group",
+            pamGroupLeader: "Reported election as head of PAM parliamentary group",
             year2017: "2017",
             pamCandidate: "PAM Candidate",
             khemissetOulmes: "Khémisset–Oulmès",
         },
         storyFlow: {
             eyebrow: "Background",
-            title:
-                "A background of expertise, territory and public service",
-            steps: [
-                "Engineering",
-                "Professional expertise",
-                "Political experience",
-                "Parliament",
-                "Oulmès",
-                "2026 Candidacy",
-            ],
+            title: "A background of expertise, territory and public service",
+            steps: ["Engineering", "Professional expertise", "Political experience", "Parliament", "Oulmès", "2026 Candidacy"],
         },
         parliament: {
             title: "Parliamentary activity",
-            description:
-                "{count} parliamentary questions are currently recorded on the House of Representatives profile for the 2021–2026 legislature.",
+            description: "{count} parliamentary questions are currently recorded on the House of Representatives profile for the 2021–2026 legislature.",
             noQuestions: "No questions in this category at the moment.",
             categories: {
                 ALL: "All",
@@ -662,14 +590,10 @@ export const translations = {
         },
         forum: {
             editionDetails: "Details of the {year} edition",
-            editionToVerify:
-                "Specific details of the {year} edition of the Oulmès Local Development Forum — to be verified.",
-            reportedThemes:
-                "Themes generally reported in forum coverage",
+            editionToVerify: "Specific details of the {year} edition of the Oulmès Local Development Forum — to be verified.",
+            reportedThemes: "Themes generally reported in forum coverage",
         },
-        map: {
-            loading: "Loading map...",
-        },
+        map: { loading: "Loading map..." },
         contact: {
             email: "Email",
             phone: "Phone",
@@ -678,22 +602,17 @@ export const translations = {
         },
         transparency: {
             title: "Public record",
-            description:
-                "This site aims to provide a transparent, sourced and verifiable view of Mohamed Achrourou's background and activity.",
+            description: "This site aims to provide a transparent, sourced and verifiable view of Mohamed Achrourou's background and activity.",
             corrections: "Corrections",
-            correctionsText:
-                "If information presented on this site is inaccurate or incomplete, please contact us so it can be corrected.",
+            correctionsText: "If information presented on this site is inaccurate or incomplete, please contact us so it can be corrected.",
+            eyebrow: "Transparency",
         },
         sources: {
             howWeSource: "How we source information",
-            method1:
-                "Official Parliament sources are prioritized for parliamentary activity.",
-            method2:
-                "Official municipal sources are prioritized for municipal projects.",
-            method3:
-                "Official PAM sources are used for party statements.",
-            method4:
-                "Reputable media are used for historical context and reporting.",
+            method1: "Official Parliament sources are prioritized for parliamentary activity.",
+            method2: "Official municipal sources are prioritized for municipal projects.",
+            method3: "Official PAM sources are used for party statements.",
+            method4: "Reputable media are used for historical context and reporting.",
             method5: "Contested allegations are clearly identified.",
             method6: "Allegations are never presented as established facts.",
         },
@@ -703,8 +622,7 @@ export const translations = {
             currentStatus: "Current status",
             notFound: "not found in examined sources",
             toVerify: "To be verified",
-            updateNote:
-                "This page will be updated if a verified official response becomes available. Reported allegations do not constitute established facts.",
+            updateNote: "This page will be updated if a verified official response becomes available. Reported allegations do not constitute established facts.",
         },
         biography: {
             professionalPath: "Professional background",
@@ -793,10 +711,12 @@ export const translations = {
             },
             sources: {
                 description: "Everything presented on this site should be traceable to a verifiable source.",
+                eyebrow: "Transparency",
             },
             media: {
                 title: "Media coverage and public disputes",
                 description: "This page distinguishes reported allegations and disputes from established facts.",
+                eyebrow: "Transparency",
             },
             election2026: {
                 description: "2026 Moroccan legislative elections.",
@@ -804,6 +724,16 @@ export const translations = {
             biography: {
                 eyebrow: "Background",
                 description: "Professional and political biography of Mohamed Achrourou.",
+                professionalIntro: "Surveying engineer / geodesist with professional experience associated with topographic administration and land registration.",
+                professionalExperience: "Professional experience reported in Khénifra, Casablanca, Tétouan and Rabat, before private practice as a surveyor.",
+                professionalPresidency: "Presidency of the National Council of Surveying Engineers, 2012–2015.",
+                engineeringNote: "Engineering education — educational institution to be verified.",
+                political2017: "Reported election as head of the PAM parliamentary group in the House of Representatives.",
+                political2019: "Presidency of the national federation associated with Oulmès-Zaër cattle breeders.",
+                political2021: "Member of the House of Representatives for the Khémisset–Oulmès constituency.",
+                political2022: "Election as regional secretary of PAM in Khémisset.",
+                politicalToVerify: "President of the Oulmès municipality (date of taking office to be verified).",
+                political2026: "PAM candidate for the Khémisset–Oulmès constituency.",
             },
         },
     },

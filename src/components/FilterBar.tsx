@@ -1,6 +1,7 @@
 "use client";
 
 import { ParliamentCategory } from "@/content/parliament";
+import { useLanguage } from "@/content/LanguageContext";
 
 const categories: (ParliamentCategory | "ALL")[] = [
   "ALL",
@@ -23,6 +24,13 @@ type Props = {
 };
 
 export default function FilterBar({ active, onChange }: Props) {
+  const { t } = useLanguage();
+
+  const getCategoryLabel = (cat: ParliamentCategory | "ALL") => {
+    if (cat === "ALL") return t("parliament.categories.ALL");
+    return t(`parliament.categories.${cat}`);
+  };
+
   return (
     <div className="flex flex-wrap gap-2">
       {categories.map((cat) => (
@@ -35,7 +43,7 @@ export default function FilterBar({ active, onChange }: Props) {
               : "bg-transparent text-ink/70 border-clay/40 hover:border-ink/60"
           }`}
         >
-          {cat}
+          {getCategoryLabel(cat)}
         </button>
       ))}
     </div>

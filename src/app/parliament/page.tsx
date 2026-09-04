@@ -33,9 +33,7 @@ export default function ParliamentPage() {
           {t("parliament.title")}
         </h1>
         <p className="text-ink/70">
-          {parliamentQuestions.length} questions parlementaires sont
-          actuellement recensées sur le profil de la Chambre des
-          Représentants pour la législature 2021–2026.
+          {t("parliament.description", { count: parliamentQuestions.length })}
         </p>
         <div className="mt-4">
           <SourceBadge
