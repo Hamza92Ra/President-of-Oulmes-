@@ -46,4 +46,8 @@ export default function ParliamentFeed() {
               {t(`parliament.categories.${q.category}`)}
             </span>
           </div>
-        </div></section>)}
+        ))}
+      </div>
+    </section>
+  );
+}

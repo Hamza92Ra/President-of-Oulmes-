@@ -1,16 +1,21 @@
-﻿import SectionHeader from "@/components/SectionHeader";
+﻿"use client";
+
+import SectionHeader from "@/components/SectionHeader";
 import MotifDivider from "@/components/MotifDivider";
 import ImageGallery from "@/components/ImageGallery";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function CulturePage() {
+  const { t } = useLanguage();
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
-      <SectionHeader eyebrow="Culture & Identité" title="Culture & Identité" />
+      <SectionHeader
+        eyebrow={t("pages.culture.eyebrow")}
+        title={t("pages.culture.title")}
+      />
       <p className="text-editorial text-ink/80 mb-8">
-        Des documents du PAM décrivent la participation d&apos;Achrourou à des
-        discussions concernant l&apos;identité amazighe, la mise en œuvre
-        après la Constitution de 2011, la langue amazighe, et la
-        régionalisation avancée.
+        {t("pages.culture.description")}
       </p>
 
       <ImageGallery
@@ -20,8 +25,7 @@ export default function CulturePage() {
       <MotifDivider />
 
       <p className="text-xs text-ink/50 italic mt-8">
-        Ne pas transformer ceci en un programme culturel plus large en
-        l&apos;absence d&apos;un programme officiel fourni.
+        {t("pages.culture.disclaimer")}
       </p>
     </main>
   );

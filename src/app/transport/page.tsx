@@ -1,11 +1,16 @@
-﻿import SectionHeader from "@/components/SectionHeader";
+﻿"use client";
+
+import SectionHeader from "@/components/SectionHeader";
 import ParliamentaryQuestionCard from "@/components/ParliamentaryQuestionCard";
 import { parliamentQuestions } from "@/content/parliament";
 import HomeMap from "@/components/HomeMap";
 import ImageGallery from "@/components/ImageGallery";
 import MotifDivider from "@/components/MotifDivider";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function TransportPage() {
+  const { t } = useLanguage();
+
   const transportQuestions = parliamentQuestions.filter(
     (q) => q.category === "Infrastructure" || q.category === "Transport"
   );
@@ -13,9 +18,9 @@ export default function TransportPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Territoire"
-        title="Transport & Infrastructure"
-        description="Route régionale 704, routes provinciales 4316 et 4325, routes rurales, sécurité routière, connexion ferroviaire à Khémisset."
+        eyebrow={t("pages.transport.eyebrow")}
+        title={t("pages.transport.title")}
+        description={t("pages.transport.description")}
       />
 
       <ImageGallery

@@ -1,8 +1,13 @@
-﻿import { projects } from "@/content/projects";
+"use client";
+
+import { projects } from "@/content/projects";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function ProjectsPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader

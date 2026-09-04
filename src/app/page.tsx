@@ -1,4 +1,6 @@
-﻿import Hero from "@/components/Hero";
+"use client";
+
+import Hero from "@/components/Hero";
 import StatsSection from "@/components/StatsSection";
 import StoryFlow from "@/components/StoryFlow";
 import FourPillars from "@/components/FourPillars";
@@ -8,8 +10,11 @@ import SourceCategories from "@/components/SourceCategories";
 import HomeMap from "@/components/HomeMap";
 import MotifDivider from "@/components/MotifDivider";
 import ImageGallery from "@/components/ImageGallery";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
   return (
     <main>
       <Hero />
@@ -21,7 +26,7 @@ export default function HomePage() {
       <MotifDivider />
       <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
         <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-8 tracking-tight">
-          Territoire — Khémisset &amp; Oulmès
+          {t("home.territoryTitle")}
         </h2>
         <HomeMap />
 

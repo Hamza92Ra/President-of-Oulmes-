@@ -1,24 +1,26 @@
-﻿import SectionHeader from "@/components/SectionHeader";
+﻿"use client";
+
+import SectionHeader from "@/components/SectionHeader";
 import MotifDivider from "@/components/MotifDivider";
 import ImageGallery from "@/components/ImageGallery";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function WaterEnvironmentPage() {
+  const { t, ta } = useLanguage();
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Eau & Environnement"
-        title="Eau & Environnement"
+        eyebrow={t("pages.water.eyebrow")}
+        title={t("pages.water.title")}
       />
       <p className="text-editorial text-ink/80 mb-6">
-        Thématiques documentées dans son activité parlementaire et locale :
-        accès à l&apos;eau potable, ressources en eau, gestion durable de
-        l&apos;eau, développement écologique.
+        {t("pages.water.description")}
       </p>
       <div className="flex flex-wrap gap-3 text-sm mb-8">
-        <span className="border border-clay/40 px-3 py-1">Eau</span>
-        <span className="border border-clay/40 px-3 py-1">Environnement</span>
-        <span className="border border-clay/40 px-3 py-1">Territoire</span>
-        <span className="border border-clay/40 px-3 py-1">Durabilité</span>
+        {ta("pages.water.items").map((item, i) => (
+          <span key={i} className="border border-clay/40 px-3 py-1">{item}</span>
+        ))}
       </div>
 
       <ImageGallery
@@ -28,10 +30,11 @@ export default function WaterEnvironmentPage() {
       <MotifDivider />
 
       <p className="text-ink/70 mt-8">
-        Voir aussi le projet des{" "}
+        {t("pages.water.projectLinkText")}{" "}
         <a href="/projects/ecological-baths" className="underline text-green-moroccan">
-          Bains écologiques d&apos;Oulmès
-        </a>.
+          {t("pages.water.projectLink")}
+        </a>
+        .
       </p>
     </main>
   );

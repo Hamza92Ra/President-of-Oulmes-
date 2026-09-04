@@ -7,6 +7,7 @@ import MotifDivider from "@/components/MotifDivider";
 import ImageGallery from "@/components/ImageGallery";
 import { programmeThemes } from "@/content/development";
 import { LayoutGrid, Wifi, Building2, Leaf, HeartHandshake, TrendingUp } from "lucide-react";
+import { useLanguage } from "@/content/LanguageContext";
 
 const icons: Record<string, React.ReactNode> = {
   digital: <Wifi size={20} />,
@@ -18,12 +19,14 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 export default function DevelopmentPage() {
+  const { t, lang } = useLanguage();
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Oulmès"
-        title="Forum de développement local d'Oulmès"
-        description="Un rendez-vous documenté autour du développement local, de l'agriculture, de l'élevage Oulmès-Zaër, de la culture amazighe et de la société civile."
+        eyebrow={t("pages.development.eyebrow")}
+        title={t("pages.development.title")}
+        description={t("pages.development.description")}
       />
 
       <div className="mb-10">
@@ -39,9 +42,9 @@ export default function DevelopmentPage() {
 
       <div className="mt-16">
         <SectionHeader
-          eyebrow="Oulmès 2023–2028"
-          title="Programme d'action communal"
-          description="Thématiques documentées dans la consultation autour du Programme d'Action Communale 2023–2028. Ces thématiques ne constituent pas des engagements sauf indication officielle contraire."
+          eyebrow={t("pages.development.programmeEyebrow")}
+          title={t("pages.development.programmeTitle")}
+          description={t("pages.development.programmeDescription")}
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -56,7 +59,7 @@ export default function DevelopmentPage() {
             >
               <span className="text-green-moroccan">{icons[theme.id]}</span>
               <span className="text-sm font-medium text-ink">
-                {theme.labelFr}
+                {lang === "fr" ? theme.labelFr : lang === "ar" ? theme.labelAr : theme.labelEn}
               </span>
             </motion.div>
           ))}

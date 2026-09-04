@@ -1,16 +1,21 @@
-﻿import SectionHeader from "@/components/SectionHeader";
+"use client";
+
+import SectionHeader from "@/components/SectionHeader";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ImageGallery from "@/components/ImageGallery";
 import { images } from "@/config/images";
 import SourceBadge from "@/components/SourceBadge";
 import { sources } from "@/content/sources";
 import MotifDivider from "@/components/MotifDivider";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function BiographyPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Biographie"
+        eyebrow={t("nav.biography")}
         title="Mohamed Achrourou"
         description="Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous."
       />
@@ -30,23 +35,23 @@ export default function BiographyPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
-          Parcours professionnel
+          {t("biography.professionalPath")}
         </h2>
         <p className="text-ink/80 leading-relaxed mb-3">
           Ingénieur topographe / géomètre, avec une expérience professionnelle
-          associée à l&apos;administration topographique et à
-          l&apos;immatriculation foncière.
+          associée à l'administration topographique et à
+          l'immatriculation foncière.
         </p>
         <p className="text-ink/80 leading-relaxed mb-3">
           Expérience professionnelle rapportée à Khénifra, Casablanca, Tétouan
-          et Rabat, avant l&apos;exercice en pratique privée de géomètre.
+          et Rabat, avant l'exercice en pratique privée de géomètre.
         </p>
         <p className="text-ink/80 leading-relaxed mb-3">
-          Présidence du Conseil national de l&apos;Ordre des ingénieurs
+          Présidence du Conseil national de l'Ordre des ingénieurs
           géomètres-topographes, 2012–2015.
         </p>
         <p className="text-sm text-ink/50 italic">
-          Formation d&apos;ingénieur — établissement à vérifier.
+          Formation d'ingénieur — établissement à vérifier.
         </p>
       </section>
 
@@ -54,7 +59,7 @@ export default function BiographyPage() {
 
       <section className="mt-12 mb-12">
         <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
-          Parcours politique
+          {t("biography.politicalPath")}
         </h2>
         <ul className="space-y-3 text-ink/80">
           <li>
@@ -74,8 +79,8 @@ export default function BiographyPage() {
             provincial du PAM à Khémisset.
           </li>
           <li>
-            <strong>À vérifier</strong> — Président de la commune d&apos;Oulmès
-            (date d&apos;entrée en fonction à confirmer).
+            <strong>À vérifier</strong> — Président de la commune d'Oulmès
+            (date d'entrée en fonction à confirmer).
           </li>
           <li>
             <strong>2026</strong> — Candidat du PAM pour la circonscription de
