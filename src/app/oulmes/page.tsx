@@ -1,3 +1,5 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ImageGallery from "@/components/ImageGallery";
@@ -6,36 +8,38 @@ import Link from "next/link";
 import { projects } from "@/content/projects";
 import ProjectCard from "@/components/ProjectCard";
 import MotifDivider from "@/components/MotifDivider";
-
-const oulmesAreas = [
-  {
-    href: "/agriculture",
-    title: "Territoire & Agriculture",
-    description: "Éleveurs, race bovine Oulmès-Zaër, économie rurale.",
-  },
-  {
-    href: "/water-environment",
-    title: "Eau & Environnement",
-    description: "Accès à l'eau potable, gestion durable, écologie.",
-  },
-  {
-    href: "/health",
-    title: "Santé",
-    description: "Réforme de la santé, personnel médical, campagnes locales.",
-  },
-  {
-    href: "/education",
-    title: "Éducation & Jeunesse",
-    description: "Formation, bourses, encadrement des jeunes.",
-  },
-  {
-    href: "/culture",
-    title: "Culture & Identité",
-    description: "Culture amazighe, régionalisation avancée.",
-  },
-];
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function OulmesPage() {
+  const { t } = useLanguage();
+
+  const oulmesAreas = [
+    {
+      href: "/agriculture",
+      title: t("pages.territoryAgriculture"),
+      description: "Éleveurs, race bovine Oulmès-Zaër, économie rurale.",
+    },
+    {
+      href: "/water-environment",
+      title: t("pages.water.title"),
+      description: "Accès à l'eau potable, gestion durable, écologie.",
+    },
+    {
+      href: "/health",
+      title: t("pages.health.title"),
+      description: "Réforme de la santé, personnel médical, campagnes locales.",
+    },
+    {
+      href: "/education",
+      title: t("pages.education.title"),
+      description: "Formation, bourses, encadrement des jeunes.",
+    },
+    {
+      href: "/culture",
+      title: t("pages.culture.title"),
+      description: "Culture amazighe, régionalisation avancée.",
+    },
+  ];
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader

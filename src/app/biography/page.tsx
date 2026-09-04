@@ -1,3 +1,5 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ImageGallery from "@/components/ImageGallery";
@@ -5,12 +7,14 @@ import { images } from "@/config/images";
 import SourceBadge from "@/components/SourceBadge";
 import { sources } from "@/content/sources";
 import MotifDivider from "@/components/MotifDivider";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function BiographyPage() {
+  const { t } = useLanguage();
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
-        eyebrow="Biographie"
+        eyebrow={t("nav.biography")}
         title="Mohamed Achrourou"
         description="Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous."
       />
@@ -30,7 +34,7 @@ export default function BiographyPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
-          Parcours professionnel
+          {t("biography.professionalPath")}
         </h2>
         <p className="text-ink/80 leading-relaxed mb-3">
           Ingénieur topographe / géomètre, avec une expérience professionnelle
@@ -54,7 +58,7 @@ export default function BiographyPage() {
 
       <section className="mt-12 mb-12">
         <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
-          Parcours politique
+          {t("biography.politicalPath")}
         </h2>
         <ul className="space-y-3 text-ink/80">
           <li>

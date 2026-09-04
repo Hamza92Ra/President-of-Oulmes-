@@ -1,7 +1,11 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import ImageGallery from "@/components/ImageGallery";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function MediaPage() {
+  const { t } = useLanguage();
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader

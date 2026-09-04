@@ -1,8 +1,12 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import { sources } from "@/content/sources";
 import SourceBadge from "@/components/SourceBadge";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function SourcesPage() {
+  const { t } = useLanguage();
   const sourceList = Object.values(sources);
 
   return (
@@ -15,7 +19,7 @@ export default function SourcesPage() {
 
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-ink mb-4">
-          Comment nous sourçons l&apos;information
+          {t("sources.howWeSource")}
         </h2>
         <ul className="space-y-2 text-ink/80 list-disc list-inside">
           <li>
