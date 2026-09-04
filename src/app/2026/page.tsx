@@ -1,15 +1,10 @@
-"use client";
-
 import SectionHeader from "@/components/SectionHeader";
 import { siteConfig } from "@/config/site";
 import SourceBadge from "@/components/SourceBadge";
 import { sources } from "@/content/sources";
 import ImageGallery from "@/components/ImageGallery";
-import { useLanguage } from "@/content/LanguageContext";
 
 export default function Election2026Page() {
-  const { t } = useLanguage();
-
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
@@ -26,7 +21,7 @@ export default function Election2026Page() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div className="border-t-2 border-ink/80 pt-3">
           <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
-            {t("election2026.candidate")}
+            Candidat
           </span>
           <span className="text-lg font-medium text-ink">
             {siteConfig.name.fr}
@@ -34,7 +29,7 @@ export default function Election2026Page() {
         </div>
         <div className="border-t-2 border-ink/80 pt-3">
           <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
-            {t("election2026.party")}
+            Parti
           </span>
           <span className="text-lg font-medium text-ink">
             {siteConfig.party.en}
@@ -42,7 +37,7 @@ export default function Election2026Page() {
         </div>
         <div className="border-t-2 border-ink/80 pt-3">
           <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
-            {t("election2026.constituency")}
+            Circonscription
           </span>
           <span className="text-lg font-medium text-ink">
             {siteConfig.constituency.fr}
@@ -51,7 +46,7 @@ export default function Election2026Page() {
       </div>
 
       <p className="text-ink/60 italic mb-8">
-        {t("election2026.toVerify")}
+        Détails officiels de la liste des candidats à vérifier.
       </p>
 
       <SourceBadge source={sources.pam.name} url={sources.pam.url} />

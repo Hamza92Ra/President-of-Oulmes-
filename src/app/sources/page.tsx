@@ -1,12 +1,8 @@
-"use client";
-
 import SectionHeader from "@/components/SectionHeader";
 import { sources } from "@/content/sources";
 import SourceBadge from "@/components/SourceBadge";
-import { useLanguage } from "@/content/LanguageContext";
 
 export default function SourcesPage() {
-  const { t } = useLanguage();
   const sourceList = Object.values(sources);
 
   return (
@@ -19,24 +15,28 @@ export default function SourcesPage() {
 
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-ink mb-4">
-          {t("sources.howWeSource")}
+          Comment nous sourçons l&apos;information
         </h2>
         <ul className="space-y-2 text-ink/80 list-disc list-inside">
           <li>
-            {t("sources.method1")}
+            Les sources officielles du Parlement sont priorisées pour
+            l&apos;activité parlementaire.
           </li>
           <li>
-            {t("sources.method2")}
+            Les sources municipales officielles sont priorisées pour les
+            projets communaux.
           </li>
           <li>
-            {t("sources.method3")}
+            Les sources officielles du PAM sont utilisées pour les
+            déclarations du parti.
           </li>
           <li>
-            {t("sources.method4")}
+            Les médias réputés sont utilisés pour le contexte historique et
+            le reportage.
           </li>
-          <li>{t("sources.method5")}</li>
+          <li>Les allégations contestées sont clairement identifiées.</li>
           <li>
-            {t("sources.method6")}
+            Les allégations ne sont jamais présentées comme des faits établis.
           </li>
         </ul>
       </section>
