@@ -236,6 +236,11 @@ export const translations = {
                 disclaimer: "Position exprimée lors d'une discussion parlementaire — non une affirmation objective de résultats obtenus.",
                 topics: ["Réforme de la santé", "Santé rurale", "Personnel médical et paramédical", "Disponibilité des médicaments", "Campagnes médicales locales"],
             },
+            projects: {
+                eyebrow: "Oulmès",
+                title: "Projets et initiatives documentés",
+                description: "Ces projets sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet.",
+            },
         },
     },
 
@@ -469,6 +474,11 @@ export const translations = {
                 intro: "تشير نشرة من حزب الأصالة والمعاصرة عام 2026 إلى أن أشرورو تحدث عن إصلاح الصحة وأهمية الموظفين الطبيين المؤهلين.",
                 disclaimer: "موقف عُبّر عنه في نقاش برلماني — وليس تأكيداً موضوعياً للنتائج المحققة.",
                 topics: ["إصلاح الصحة", "الصحة الريفية", "الموظفين الطبيين والمساعدين الطبيين", "توفر الأدوية", "الحملات الطبية المحلية"],
+            },
+            projects: {
+                eyebrow: "أولماس",
+                title: "المشاريع والمبادرات الموثقة",
+                description: "هذه المشاريع مرتبطة بجماعة أولماس خلال ولاية أشرورو كرئيس للجماعة؛ هذا لا يعني بالضرورة أنه نفذ شخصياً كل مشروع.",
             },
         },
     },
@@ -705,6 +715,11 @@ export const translations = {
                 intro: "A 2026 PAM publication reports that Achrourou discussed health reform and the importance of qualified medical staff.",
                 disclaimer: "Position expressed during a parliamentary discussion — not an objective assertion of results achieved.",
                 topics: ["Health reform", "Rural health", "Medical and paramedical staff", "Medication availability", "Local medical campaigns"],
+            },
+            projects: {
+                eyebrow: "Oulmès",
+                title: "Documented projects and initiatives",
+                description: "These projects are associated with the Oulmès municipality during Achrourou's term as municipal president; this does not necessarily mean he personally executed each project.",
             },
         },
     },
