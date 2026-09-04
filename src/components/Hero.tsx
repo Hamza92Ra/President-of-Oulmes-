@@ -7,18 +7,25 @@ import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/content/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <section className="max-w-6xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
       <div>
-        <p className="text-3xl text-ink/50 mb-3 font-arabic">{siteConfig.name.ar}</p>
+        <p className="text-3xl text-ink/50 mb-3 font-arabic">
+          {siteConfig.name.ar}
+        </p>
         <h1 className="text-display md:text-display-lg font-semibold text-ink leading-[1.05] mb-6 tracking-tight">
-          {siteConfig.name.fr}
+          {siteConfig.name[lang]}
         </h1>
         <p className="text-ink/70 mb-1 text-lg">{t("hero.role")}</p>
-        <p className="text-ink/70 mb-8 text-lg">{siteConfig.constituency.fr}</p>
-        <p className="text-editorial text-ink/80 mb-10 max-w-prose2">{t("hero.intro")}</p>
+        <p className="text-ink/70 mb-8 text-lg">
+          {siteConfig.constituency[lang]}
+        </p>
+
+        <p className="text-editorial text-ink/80 mb-10 max-w-prose2">
+          {t("hero.intro")}
+        </p>
 
         <div className="flex flex-wrap gap-4">
           <Link

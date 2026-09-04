@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/content/LanguageContext";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   const footerLinks = [
     { label: t("nav.biography"), href: "/biography" },
@@ -21,9 +21,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row md:justify-between gap-8">
           <div>
-            <p className="text-lg font-semibold text-ink">{siteConfig.name.ar}</p>
+            <p className="text-lg font-semibold text-ink">
+              {siteConfig.name[lang]}
+            </p>
             <p className="text-ink/70">{siteConfig.name.fr}</p>
-            <p className="text-sm text-ink/50 mt-1">{siteConfig.constituency.fr}</p>
+            <p className="text-sm text-ink/50 mt-1">
+              {siteConfig.constituency[lang]}
+            </p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2">

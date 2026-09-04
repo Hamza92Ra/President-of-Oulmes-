@@ -3,8 +3,7 @@ import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
-import { LanguageProvider } from "../content/LanguageContext";
+import { LanguageProvider } from "@/content/LanguageContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,13 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" dir="ltr" className={`${inter.variable} ${notoSansArabic.variable}`}>
+    <html className={`${inter.variable} ${notoSansArabic.variable}`}>
       <body className="flex flex-col min-h-screen font-sans">
         <LanguageProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />
-          <Chatbot />
         </LanguageProvider>
       </body>
     </html>

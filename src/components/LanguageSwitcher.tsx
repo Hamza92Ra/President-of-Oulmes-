@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../content/LanguageContext";
+import { useLanguage } from "@/content/LanguageContext";
 import { Lang } from "@/i18n/translations";
 
 const languages: { code: Lang; label: string }[] = [
@@ -14,17 +14,17 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="flex items-center gap-1 border border-clay/40 rounded-full p-0.5">
-      {languages.map((l) => (
+      {languages.map((language) => (
         <button
-          key={l.code}
-          onClick={() => setLang(l.code)}
+          key={language.code}
+          onClick={() => setLang(language.code)}
           className={`px-2.5 py-1 text-xs rounded-full transition-colors ${
-            lang === l.code
+            lang === language.code
               ? "bg-ink text-ivory"
               : "text-ink/60 hover:text-ink"
           }`}
         >
-          {l.label}
+          {language.label}
         </button>
       ))}
     </div>

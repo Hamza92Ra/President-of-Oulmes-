@@ -8,10 +8,26 @@ export default function FourPillars() {
   const { t } = useLanguage();
 
   const pillars = [
-    { href: "/parliament", icon: Landmark, key: "parliament" },
-    { href: "/oulmes", icon: MapPin, key: "oulmes" },
-    { href: "/transport", icon: TreePine, key: "territory" },
-    { href: "/biography", icon: User, key: "biography" },
+    {
+      href: "/parliament",
+      icon: Landmark,
+      titleKey: "parliament" as const,
+    },
+    {
+      href: "/oulmes",
+      icon: MapPin,
+      titleKey: "oulmes" as const,
+    },
+    {
+      href: "/transport",
+      icon: TreePine,
+      titleKey: "territory" as const,
+    },
+    {
+      href: "/biography",
+      icon: User,
+      titleKey: "biography" as const,
+    },
   ];
 
   return (
@@ -27,10 +43,10 @@ export default function FourPillars() {
             >
               <Icon className="text-green-moroccan mb-4" size={24} />
               <h3 className="font-semibold text-ink mb-2">
-                {t(`pillars.${pillar.key}.title`)}
+                {t(`pillars.${pillar.titleKey}.title`)}
               </h3>
               <p className="text-sm text-ink/70">
-                {t(`pillars.${pillar.key}.description`)}
+                {t(`pillars.${pillar.titleKey}.description`)}
               </p>
             </Link>
           );

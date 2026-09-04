@@ -12,29 +12,29 @@ import { translations, Lang } from "../i18n/translations";
 type LanguageContextValue = {
     lang: Lang;
     setLang: (lang: Lang) => void;
-    // t("nav.biography") -> lit translations[lang].nav.biography
     t: (path: string) => string;
+    ta: (path: string) => string[];
 };
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(
     undefined
 );
 
-function getNested(obj: unknown, path: string): string {
-    const result = path
+function getNested(obj: unknown, path: string): unknown {
+    return path
         .split(".")
         .reduce<unknown>(
             (acc, key) =>
-                acc && typeof acc === "object" ? (acc as Record<string, unknown>)[key] : undefined,
+                acc && typeof acc === "object"
+                    ? (acc as Record<string, unknown>)[key]
+                    : undefined,
             obj
         );
-    return typeof result === "string" ? result : path;
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [lang, setLangState] = useState<Lang>("fr");
 
-    // Au premier rendu côté client, on relit la langue sauvegardée
     useEffect(() => {
         const saved = window.localStorage.getItem("preferredLang") as Lang | null;
         if (saved && ["fr", "ar", "en"].includes(saved)) {
@@ -42,8 +42,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         }
     }, []);
 
-    // Chaque fois que la langue change, on met à jour <html lang="" dir="">
-    // pour que l'arabe s'affiche bien en RTL, et on persiste le choix.
     useEffect(() => {
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -55,11 +53,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     function t(path: string): string {
-        return getNested(translations[lang], path);
+        const result = getNested(translations[lang], path);
+        return typeof result === "string" ? result : path;
+    }
+
+    function ta(path: string): string[] {
+        const result = getNested(translations[lang], path);
+        return Array.isArray(result)
+            ? result.filter((item): item is string => typeof item === "string")
+            : [];
     }
 
     return (
-        <LanguageContext.Provider value={{ lang, setLang, t }}>
+        <LanguageContext.Provider value={{ lang, setLang, t, ta }}>
             {children}
         </LanguageContext.Provider>
     );
@@ -68,7 +74,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 export function useLanguage(): LanguageContextValue {
     const ctx = useContext(LanguageContext);
     if (!ctx) {
-        throw new Error("useLanguage doit être utilisé à l'intérieur de <LanguageProvider>");
+        throw new Error(
+            "useLanguage doit être utilisé à l'intérieur de <LanguageProvider>"
+        );
     }
     return ctx;
 }

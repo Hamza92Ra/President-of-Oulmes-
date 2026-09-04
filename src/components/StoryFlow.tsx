@@ -1,24 +1,19 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-
-const steps = [
-  "Ingénierie",
-  "Expertise professionnelle",
-  "Expérience politique",
-  "Parlement",
-  "Oulmès",
-  "Candidature 2026",
-];
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function StoryFlow() {
+  const { t, ta } = useLanguage();
+  const steps = ta("storyFlow.steps");
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
       <p className="text-xs uppercase tracking-[0.2em] text-green-moroccan font-medium mb-3">
-        Parcours
+        {t("storyFlow.eyebrow")}
       </p>
       <h2 className="text-3xl md:text-4xl font-semibold text-ink leading-tight mb-12 max-w-2xl">
-        Un parcours entre expertise, territoire et service public
+        {t("storyFlow.title")}
       </h2>
 
       <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
