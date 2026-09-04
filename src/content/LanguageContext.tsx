@@ -7,71 +7,55 @@ import {
     useState,
     ReactNode,
 } from "react";
+import { translations, Lang } from "../i18n/translations";
 
-export type Lang = "fr" | "ar" | "en";
-
-type Dict = Record<string, Record<Lang, string>>;
-
-// Central dictionary. Add a key here, then use t("yourKey") anywhere.
-const dictionary: Dict = {
-    navBiography: { fr: "Biographie", ar: "السيرة الذاتية", en: "Biography" },
-    navParliament: { fr: "Parlement", ar: "البرلمان", en: "Parliament" },
-    navOulmes: { fr: "Oulmès", ar: "أولماس", en: "Oulmès" },
-    navProjects: { fr: "Projets", ar: "المشاريع", en: "Projects" },
-    navTimeline: { fr: "Parcours", ar: "المسار", en: "Timeline" },
-    navMedia: { fr: "Médias", ar: "وسائل الإعلام", en: "Media" },
-    navTransparency: { fr: "Transparence", ar: "الشفافية", en: "Transparency" },
-    navSources: { fr: "Sources", ar: "المصادر", en: "Sources" },
-    nav2026: { fr: "2026", ar: "2026", en: "2026" },
-    navContact: { fr: "Contact", ar: "اتصل بنا", en: "Contact" },
-    footerLastUpdated: {
-        fr: "Dernière mise à jour",
-        ar: "آخر تحديث",
-        en: "Last updated",
-    },
-    footerSourcesNote: {
-        fr: "Les informations sont présentées avec leurs sources lorsqu'elles sont disponibles.",
-        ar: "يتم تقديم المعلومات مع مصادرها عند توفرها.",
-        en: "Information is presented with sources where available.",
-    },
-    openMenu: { fr: "Ouvrir le menu", ar: "فتح القائمة", en: "Open menu" },
-    closeMenu: { fr: "Fermer le menu", ar: "إغلاق القائمة", en: "Close menu" },
-};
-
-interface LanguageContextValue {
+type LanguageContextValue = {
     lang: Lang;
     setLang: (lang: Lang) => void;
-    t: (key: keyof typeof dictionary) => string;
-}
+    // t("nav.biography") -> lit translations[lang].nav.biography
+    t: (path: string) => string;
+};
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(
     undefined
 );
 
+function getNested(obj: unknown, path: string): string {
+    const result = path
+        .split(".")
+        .reduce<unknown>(
+            (acc, key) =>
+                acc && typeof acc === "object" ? (acc as Record<string, unknown>)[key] : undefined,
+            obj
+        );
+    return typeof result === "string" ? result : path;
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [lang, setLangState] = useState<Lang>("fr");
 
-    // Load saved preference on mount (client only)
+    // Au premier rendu côté client, on relit la langue sauvegardée
     useEffect(() => {
         const saved = window.localStorage.getItem("preferredLang") as Lang | null;
-        if (saved === "fr" || saved === "ar" || saved === "en") {
+        if (saved && ["fr", "ar", "en"].includes(saved)) {
             setLangState(saved);
         }
     }, []);
 
-    // Keep <html lang> / dir in sync so Arabic renders RTL correctly
+    // Chaque fois que la langue change, on met à jour <html lang="" dir="">
+    // pour que l'arabe s'affiche bien en RTL, et on persiste le choix.
     useEffect(() => {
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        window.localStorage.setItem("preferredLang", lang);
     }, [lang]);
 
     function setLang(next: Lang) {
         setLangState(next);
-        window.localStorage.setItem("preferredLang", next);
     }
 
-    function t(key: keyof typeof dictionary): string {
-        return dictionary[key]?.[lang] ?? String(key);
+    function t(path: string): string {
+        return getNested(translations[lang], path);
     }
 
     return (
@@ -81,10 +65,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     );
 }
 
-export function useLanguage() {
+export function useLanguage(): LanguageContextValue {
     const ctx = useContext(LanguageContext);
     if (!ctx) {
-        throw new Error("useLanguage must be used within a LanguageProvider");
+        throw new Error("useLanguage doit être utilisé à l'intérieur de <LanguageProvider>");
     }
     return ctx;
 }

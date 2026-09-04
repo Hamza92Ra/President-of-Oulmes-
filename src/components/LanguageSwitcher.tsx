@@ -1,6 +1,7 @@
 "use client";
 
-import { useLanguage, Lang } from "../content/LanguageContext";
+import { useLanguage } from "../content/LanguageContext";
+import { Lang } from "@/i18n/translations";
 
 const languages: { code: Lang; label: string }[] = [
   { code: "fr", label: "FR" },

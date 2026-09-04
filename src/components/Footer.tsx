@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { useLanguage } from "../content/LanguageContext";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function Footer() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const footerLinks = [
-    { label: t("navBiography"), href: "/biography" },
-    { label: t("navParliament"), href: "/parliament" },
-    { label: t("navOulmes"), href: "/projects" },
-    { label: t("navSources"), href: "/sources" },
-    { label: t("navTransparency"), href: "/transparency" },
-    { label: t("navContact"), href: "/contact" },
+    { label: t("nav.biography"), href: "/biography" },
+    { label: t("nav.parliament"), href: "/parliament" },
+    { label: t("nav.oulmes"), href: "/projects" },
+    { label: t("nav.sources"), href: "/sources" },
+    { label: t("nav.transparency"), href: "/transparency" },
+    { label: t("nav.contact"), href: "/contact" },
   ];
 
   return (
@@ -21,13 +21,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row md:justify-between gap-8">
           <div>
-            <p className="text-lg font-semibold text-ink">
-              {siteConfig.name.ar}
-            </p>
+            <p className="text-lg font-semibold text-ink">{siteConfig.name.ar}</p>
             <p className="text-ink/70">{siteConfig.name.fr}</p>
-            <p className="text-sm text-ink/50 mt-1">
-              {siteConfig.constituency.fr}
-            </p>
+            <p className="text-sm text-ink/50 mt-1">{siteConfig.constituency.fr}</p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
@@ -45,9 +41,9 @@ export default function Footer() {
 
         <div className="border-t border-clay/20 mt-8 pt-6 text-xs text-ink/50 flex flex-col md:flex-row md:justify-between gap-2">
           <span>
-            {t("footerLastUpdated")} : {siteConfig.lastUpdated}
+            {t("footer.updatedAt")} {siteConfig.lastUpdated}
           </span>
-          <span>{t("footerSourcesNote")}</span>
+          <span>{t("footer.sourcesNote")}</span>
         </div>
       </div>
     </footer>

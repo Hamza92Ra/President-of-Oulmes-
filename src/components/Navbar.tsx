@@ -4,23 +4,23 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useLanguage } from "../content/LanguageContext";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
 
   const navLinks = [
-    { href: "/biography", label: t("navBiography") },
-    { href: "/parliament", label: t("navParliament") },
-    { href: "/oulmes", label: t("navOulmes") },
-    { href: "/projects", label: t("navProjects") },
-    { href: "/timeline", label: t("navTimeline") },
-    { href: "/media", label: t("navMedia") },
-    { href: "/transparency", label: t("navTransparency") },
-    { href: "/sources", label: t("navSources") },
-    { href: "/2026", label: t("nav2026") },
-    { href: "/contact", label: t("navContact") },
+    { href: "/biography", label: t("nav.biography") },
+    { href: "/parliament", label: t("nav.parliament") },
+    { href: "/oulmes", label: t("nav.oulmes") },
+    { href: "/projects", label: t("nav.projects") },
+    { href: "/timeline", label: t("nav.timeline") },
+    { href: "/media", label: t("nav.media") },
+    { href: "/transparency", label: t("nav.transparency") },
+    { href: "/sources", label: t("nav.sources") },
+    { href: "/2026", label: "2026" },
+    { href: "/contact", label: t("nav.contact") },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function Navbar() {
         <button
           className="lg:hidden text-ink"
           onClick={() => setOpen(!open)}
-          aria-label={open ? t("closeMenu") : t("openMenu")}
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
