@@ -1,0 +1,68 @@
+﻿import { ChatEntry } from "./chatbotData";
+
+export const chatKnowledgeBaseExtra: ChatEntry[] = [
+  {
+    id: "education-origins",
+    keywords: ["formation", "education", "iav", "hassan", "1980", "diplome", "ingenieur", "picd", "تكوين", "دبلوم", "iav hassan"],
+    answerFr: "Il obtient son diplôme d'ingénieur géomètre-topographe en 1980 à l'Institut Agronomique et Vétérinaire Hassan II (IAV) de Rabat. Avant le PAM, il avait participé en 2002 à la création d'un petit parti, le PICD, avant de rejoindre la dynamique de Fouad Ali El Himma en 2007.",
+    answerEn: "He earned his surveying engineering degree in 1980 from the Hassan II Institute of Agronomy and Veterinary Medicine (IAV) in Rabat. Before the PAM, he helped found a small party, the PICD, in 2002, before joining Fouad Ali El Himma's movement in 2007.",
+    answerAr: "تخرج مهندسا مساحا طبوغرافيا سنة 1980 من معهد الحسن الثاني للزراعة والبيطرة بالرباط. قبل حزب PAM، شارك سنة 2002 في تأسيس حزب صغير هو PICD، قبل الانضمام لحركة فؤاد عالي الهمة سنة 2007.",
+    answerDarija: "تخرج مهندس مساح طبوغرافي فـ1980 من معهد الحسن الثاني بالرباط. قبل PAM، شارك فـ2002 فتأسيس حزب صغير سميتو PICD، قبل ما ينضم لحركة فؤاد عالي الهمة فـ2007.",
+  },
+  {
+    id: "resignation-2016",
+    keywords: ["demission", "resignation", "2016", "benkirane", "استقالة", "استقال"],
+    answerFr: "En avril 2016, en pleine séance télévisée de questions orales, il a dénoncé la marginalisation d'Oulmès puis remis sa lettre de démission au président de séance avant de quitter l'hémicycle. Il expliquera : « J'ai démissionné car j'ai échoué [à faire entendre la voix de ma région] ». Il a été réélu aux législatives d'octobre 2016.",
+    answerEn: "In April 2016, during a live televised questions session, he denounced the marginalization of Oulmès and handed in his resignation letter before walking out of parliament. He later said: 'I resigned because I failed [to make my region's voice heard].' He was re-elected in the October 2016 legislative elections.",
+    answerAr: "في أبريل 2016، خلال جلسة أسئلة شفوية مباشرة على التلفزيون، ندد بتهميش أولماس وسلم رسالة استقالته لرئيس الجلسة وغادر القاعة. صرح لاحقا: «استقلت لأنني فشلت [في إسماع صوت جهتي]». أعيد انتخابه في التشريعيات لأكتوبر 2016.",
+    answerDarija: "فأبريل 2016، فجلسة أسئلة مباشرة فالتلفزة، هضر على تهميش أولماس وسلم رسالة الاستقالة ديالو وخرج من القاعة. قال منبعد: «استقلت حيت فشلت [نوصل صوت الجهة ديالي]». تنتخب مرة أخرى فانتخابات أكتوبر 2016.",
+  },
+  {
+    id: "recent-questions-2025-2026",
+    keywords: ["oncf", "train", "railway", "khemisset train", "medicament", "tdah", "consulat", "edmonton", "apprentissage", "قطار", "دواء", "قنصلية"],
+    answerFr: "Entre 2025 et 2026, il a multiplié les questions écrites : raccordement de Khémisset au réseau ferré ONCF (mai 2025), pénurie de médicaments pour le TDAH (sept. 2025), création d'un consulat à Edmonton (janvier 2026), généralisation de la formation par apprentissage (janvier 2026), état de la route provinciale 4316 (juin 2026) et mise à niveau de la route régionale 704 (mai 2026).",
+    answerEn: "Between 2025 and 2026 he filed several written questions: connecting Khémisset to the ONCF rail network (May 2025), the ADHD medication shortage (Sept 2025), opening a consulate in Edmonton (Jan 2026), expanding apprenticeship training (Jan 2026), the state of Provincial Road 4316 (June 2026), and upgrading Regional Road 704 (May 2026).",
+    answerAr: "بين 2025 و2026، تقدم بعدة أسئلة كتابية: ربط الخميسات بشبكة السكك الحديدية (ماي 2025)، ندرة أدوية اضطراب فرط الحركة (شتنبر 2025)، إحداث قنصلية بإدمنتون (يناير 2026)، تعميم التكوين بالتدرج (يناير 2026)، حالة الطريق الإقليمية 4316 (يونيو 2026)، وتأهيل الطريق الجهوية 704 (ماي 2026).",
+    answerDarija: "بين 2025 و2026، دار بزاف ديال الأسئلة الكتابية: ربط الخميسات بالسكة الحديدية (ماي 2025)، نقص الدوا ديال فرط الحركة (شتنبر 2025)، قنصلية جديدة بإدمنتون (يناير 2026)، والطريق الإقليمية 4316 والجهوية 704.",
+  },
+  {
+    id: "water-revenue",
+    keywords: ["eau minerale", "sidi ali", "mineral water", "revenus", "taxes", "budget commune", "مياه معدنية", "سيدي علي", "عائدات"],
+    answerFr: "La commune d'Oulmès tire des revenus importants des taxes locales et redevances sur les sources exploitées par la compagnie Les Eaux Minérales d'Oulmès (marques Sidi Ali, Oulmès), ce qui en fait l'une des communes rurales les plus riches du Maroc.",
+    answerEn: "The Oulmès commune draws significant revenue from local taxes and royalties on the springs operated by Les Eaux Minérales d'Oulmès (Sidi Ali, Oulmès brands), making it one of Morocco's wealthiest rural communes.",
+    answerAr: "تستفيد جماعة أولماس من عائدات مهمة من الضرائب المحلية والإتاوات على المنابع التي تستغلها شركة المياه المعدنية بأولماس (علامتا سيدي علي وأولماس)، مما يجعلها من أغنى الجماعات القروية بالمغرب.",
+    answerDarija: "جماعة أولماس كتربح بزاف من الضرائب المحلية والإتاوات على المنابع اللي كتستغلهم شركة المياه المعدنية (سيدي علي، أولماس)، هادشي كيديرها من أغنى الجماعات القروية فالمغرب.",
+  },
+  {
+    id: "judicial-affairs",
+    keywords: ["corruption", "enquete", "gare routiere", "marches publics", "favoritisme", "parquet", "police judiciaire", "فساد", "تحقيق", "محطة الطرق", "الصفقات"],
+    answerFr: "Depuis 2024-2025, la gestion de la commune fait l'objet de suspicions liées au projet de gare routière d'Oulmès (budget ~20 millions de DH). Des élus et ONG locales ont saisi le ministère de l'Intérieur pour un audit des marchés publics, et une plainte a été déposée au parquet de Rabat fin 2025 pour favoritisme présumé.",
+    answerEn: "Since 2024-2025, management of the commune has faced suspicion linked to the Oulmès bus station project (~20 million MAD budget). Local officials and NGOs have called on the Interior Ministry for a public procurement audit, and a complaint was filed with Rabat's public prosecutor in late 2025 over alleged favoritism.",
+    answerAr: "منذ 2024-2025، تثار شبهات حول تدبير الجماعة مرتبطة بمشروع محطة الطرق بأولماس (ميزانية حوالي 20 مليون درهم). طالب منتخبون وجمعيات وزارة الداخلية بتدقيق الصفقات العمومية، وأودعت شكاية لدى النيابة العامة بالرباط أواخر 2025 بشأن شبهة محاباة.",
+    answerDarija: "من 2024-2025، كاينة شكوك على تدبير الجماعة مرتبطة بمشروع محطة الطرق بأولماس (الميزانية ~20 مليون درهم). منتخبين وجمعيات طلبو من وزارة الداخلية تدقيق الصفقات، وتقدمات شكاية للنيابة العامة بالرباط آخر 2025 بسبب شبهة محاباة.",
+  },
+  {
+    id: "future-vision",
+    keywords: ["vision", "avenir", "future", "transition energetique", "agro ecologie", "eco tourisme", "solaire", "رؤية", "المستقبل", "الطاقة", "سياحة بيئية"],
+    answerFr: "Sa vision d'avenir repose sur trois axes : le désenclavement par le train et les routes régionales, la transition vers l'agro-écologie et l'éco-tourisme autour de la race bovine Oulmès-Zaër, et l'autonomie énergétique locale via le solaire et la biomasse rurale.",
+    answerEn: "His future vision rests on three pillars: opening up the region via rail and regional roads, shifting toward agro-ecology and eco-tourism around the Oulmès-Zaër cattle breed, and local energy self-sufficiency through solar and rural biomass.",
+    answerAr: "تقوم رؤيته المستقبلية على ثلاثة محاور: فك العزلة عبر السكة الحديدية والطرق الجهوية، التحول نحو الفلاحة الإيكولوجية والسياحة البيئية حول سلالة أولماس-زعير، والاستقلالية الطاقية المحلية عبر الطاقة الشمسية والكتلة الحيوية القروية.",
+    answerDarija: "الرؤية ديالو للمستقبل فيها تلاتة محاور: فك العزلة بالسكة الحديدية والطرق الجهوية، التحول للفلاحة الإيكولوجية والسياحة البيئية حول سلالة أولماس-زعير، والاستقلالية الطاقية بالطاقة الشمسية.",
+  },
+  {
+    id: "forum-oulmes",
+    keywords: ["forum", "carrefour", "10eme edition", "75000", "visiteurs", "montagne", "منتدى", "ملتقى", "زوار"],
+    answerFr: "Le Carrefour (Forum) d'Oulmès pour le développement local, qu'il a initié, a célébré sa 10ème édition en juillet 2024 et attiré plus de 75 000 visiteurs, mettant en avant l'agro-écologie et le tourisme de montagne.",
+    answerEn: "The Oulmès Forum for Local Development, which he initiated, celebrated its 10th edition in July 2024 and drew over 75,000 visitors, highlighting agro-ecology and mountain tourism.",
+    answerAr: "ملتقى أولماس للتنمية المحلية، الذي كان من مبادريه، احتفل بدورته العاشرة في يوليوز 2024 واستقطب أزيد من 75 ألف زائر، مبرزا الفلاحة الإيكولوجية والسياحة الجبلية.",
+    answerDarija: "ملتقى أولماس للتنمية المحلية، اللي هو ديك اللي بداه، احتفل بالدورة العاشرة ديالو فيوليوز 2024 وجاب أكثر من 75 ألف زائر، وبرز الفلاحة الإيكولوجية والسياحة الجبلية.",
+  },
+  {
+    id: "onigt-network",
+    keywords: ["onigt", "ordre", "geometres", "foncier", "bornage", "btp", "الهيئة الوطنية", "المساحين", "العقار"],
+    answerFr: "En tant qu'ex-président du Conseil National de l'ONIGT (Ordre des ingénieurs géomètres-topographes), il a défendu que le bornage foncier reste réservé aux ingénieurs inscrits à l'Ordre, ce qui lui a valu un large soutien dans les milieux du BTP et de l'ingénierie.",
+    answerEn: "As former head of the ONIGT (National Order of Surveying Engineers), he argued that land boundary work should remain exclusive to registered engineers, earning him strong support in construction and engineering circles.",
+    answerAr: "بصفته رئيسا سابقا للمجلس الوطني لهيئة المهندسين المساحين الطبوغرافيين (ONIGT)، دافع عن أن يبقى التحديد العقاري حكرا على المهندسين المسجلين بالهيئة، مما منحه دعما واسعا في أوساط البناء والهندسة.",
+    answerDarija: "بصفتو رئيس سابق للهيئة الوطنية للمهندسين المساحين (ONIGT)، دافع على أن التحديد العقاري يبقى غير للمهندسين المسجلين، هادشي عطاه دعم كبير فوسط البناء والهندسة.",
+  },
+];

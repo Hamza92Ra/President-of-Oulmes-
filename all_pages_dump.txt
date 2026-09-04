@@ -1,0 +1,1116 @@
+﻿
+===== C:\Users\hp\mohamed-achrourou\src\app\2026\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import { siteConfig } from "@/config/site";
+import SourceBadge from "@/components/SourceBadge";
+import { sources } from "@/content/sources";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function Election2026Page() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="2026"
+        title="Khémisset–Oulmès"
+        description="Élections législatives marocaines de 2026."
+      />
+
+      <ImageGallery
+        imageKeys={["portraitEventSpeech", "parliament", "oulmesTown", "mediaPressConference", "developmentForumGroup"]}
+        className="mb-10"
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="border-t-2 border-ink/80 pt-3">
+          <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
+            Candidat
+          </span>
+          <span className="text-lg font-medium text-ink">
+            {siteConfig.name.fr}
+          </span>
+        </div>
+        <div className="border-t-2 border-ink/80 pt-3">
+          <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
+            Parti
+          </span>
+          <span className="text-lg font-medium text-ink">
+            {siteConfig.party.en}
+          </span>
+        </div>
+        <div className="border-t-2 border-ink/80 pt-3">
+          <span className="text-xs uppercase tracking-[0.1em] text-ink/50 block mb-1">
+            Circonscription
+          </span>
+          <span className="text-lg font-medium text-ink">
+            {siteConfig.constituency.fr}
+          </span>
+        </div>
+      </div>
+
+      <p className="text-ink/60 italic mb-8">
+        Détails officiels de la liste des candidats à vérifier.
+      </p>
+
+      <SourceBadge source={sources.pam.name} url={sources.pam.url} />
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\agriculture\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function AgriculturePage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Territoire & Agriculture"
+        title="Territoire & Agriculture"
+      />
+      <p className="text-editorial text-ink/80 mb-6">
+        Achrourou a été rapporté comme président de la fédération nationale
+        associée aux éleveurs de la race bovine Oulmès-Zaër.
+      </p>
+      <div className="flex flex-wrap items-center gap-3 text-sm text-ink/70 mb-8">
+        <span className="border border-clay/40 px-3 py-1">Terre</span>
+        <span>→</span>
+        <span className="border border-clay/40 px-3 py-1">Éleveurs</span>
+        <span>→</span>
+        <span className="border border-clay/40 px-3 py-1">Oulmès-Zaër</span>
+        <span>→</span>
+        <span className="border border-clay/40 px-3 py-1">Économie locale</span>
+        <span>→</span>
+        <span className="border border-clay/40 px-3 py-1">Patrimoine</span>
+      </div>
+
+      <ImageGallery
+        imageKeys={["agricultureOulmes", "cattleOulmesZaer", "farmersOulmes", "agricultureFields", "agricultureMarket"]}
+      />
+
+      <MotifDivider />
+
+      <ul className="list-disc list-inside text-ink/80 space-y-1 mt-8">
+        <li>Soutien aux éleveurs</li>
+        <li>Programmes de prévention / santé animale</li>
+        <li>Coopération avec le ministère de l&apos;Agriculture</li>
+        <li>Préservation de la race Oulmès-Zaër</li>
+        <li>Économie rurale</li>
+      </ul>
+      <p className="text-xs text-ink/50 italic mt-6">
+        Ces thématiques ne constituent pas des promesses sauf indication
+        officielle contraire.
+      </p>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\biography\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ImageGallery from "@/components/ImageGallery";
+import { images } from "@/config/images";
+import SourceBadge from "@/components/SourceBadge";
+import { sources } from "@/content/sources";
+import MotifDivider from "@/components/MotifDivider";
+
+export default function BiographyPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Biographie"
+        title="Mohamed Achrourou"
+        description="Ingénieur topographe de formation, il a occupé des responsabilités professionnelles, associatives et politiques documentées ci-dessous."
+      />
+
+      <ImagePlaceholder
+        src={images.portrait}
+        alt="Mohamed Achrourou"
+        label="portrait-mohamed-achrourou.jpg"
+        aspectRatio="3/4"
+        className="max-w-sm mb-12"
+      />
+
+      <ImageGallery
+        imageKeys={["portraitFieldVisit", "portraitEventSpeech", "portraitCommunityMeeting", "parliament", "oulmesTown"]}
+        className="mb-12"
+      />
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
+          Parcours professionnel
+        </h2>
+        <p className="text-ink/80 leading-relaxed mb-3">
+          Ingénieur topographe / géomètre, avec une expérience professionnelle
+          associée à l&apos;administration topographique et à
+          l&apos;immatriculation foncière.
+        </p>
+        <p className="text-ink/80 leading-relaxed mb-3">
+          Expérience professionnelle rapportée à Khénifra, Casablanca, Tétouan
+          et Rabat, avant l&apos;exercice en pratique privée de géomètre.
+        </p>
+        <p className="text-ink/80 leading-relaxed mb-3">
+          Présidence du Conseil national de l&apos;Ordre des ingénieurs
+          géomètres-topographes, 2012–2015.
+        </p>
+        <p className="text-sm text-ink/50 italic">
+          Formation d&apos;ingénieur — établissement à vérifier.
+        </p>
+      </section>
+
+      <MotifDivider />
+
+      <section className="mt-12 mb-12">
+        <h2 className="text-2xl font-semibold text-ink mb-4 tracking-tight">
+          Parcours politique
+        </h2>
+        <ul className="space-y-3 text-ink/80">
+          <li>
+            <strong>2017</strong> — Élection rapportée à la présidence du
+            groupe parlementaire PAM à la Chambre des Représentants.
+          </li>
+          <li>
+            <strong>2019</strong> — Présidence de la fédération nationale
+            associée aux éleveurs de bovins Oulmès-Zaër.
+          </li>
+          <li>
+            <strong>2021–2026</strong> — Membre de la Chambre des
+            Représentants pour la circonscription de Khémisset–Oulmès.
+          </li>
+          <li>
+            <strong>2022</strong> — Élection au poste de secrétaire
+            provincial du PAM à Khémisset.
+          </li>
+          <li>
+            <strong>À vérifier</strong> — Président de la commune d&apos;Oulmès
+            (date d&apos;entrée en fonction à confirmer).
+          </li>
+          <li>
+            <strong>2026</strong> — Candidat du PAM pour la circonscription de
+            Khémisset–Oulmès.
+          </li>
+        </ul>
+      </section>
+
+      <SourceBadge
+        source={sources.parliamentProfile.name}
+        url={sources.parliamentProfile.url}
+      />
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\contact\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import { siteConfig } from "@/config/site";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function ContactPage() {
+  return (
+    <main className="max-w-2xl mx-auto px-6 py-16">
+      <SectionHeader eyebrow="Contact" title="Nous contacter" />
+
+      <ImageGallery
+        imageKeys={["portraitEventSpeech", "parliament", "oulmesTown", "mediaEvent", "developmentForumGroup"]}
+        className="mb-10"
+      />
+
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+            Email
+          </h2>
+          <p className="text-ink/80">{siteConfig.contact.email}</p>
+        </div>
+
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+            Téléphone
+          </h2>
+          <p className="text-ink/80">{siteConfig.contact.phone}</p>
+        </div>
+
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+            Bureau
+          </h2>
+          <p className="text-ink/80">{siteConfig.contact.address}</p>
+        </div>
+      </div>
+
+      <p className="text-xs text-ink/40 mt-10">
+        Ces coordonnées sont configurables dans src/config/site.ts.
+      </p>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\culture\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function CulturePage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader eyebrow="Culture & Identité" title="Culture & Identité" />
+      <p className="text-editorial text-ink/80 mb-8">
+        Des documents du PAM décrivent la participation d&apos;Achrourou à des
+        discussions concernant l&apos;identité amazighe, la mise en œuvre
+        après la Constitution de 2011, la langue amazighe, et la
+        régionalisation avancée.
+      </p>
+
+      <ImageGallery
+        imageKeys={["cultureOulmes", "cultureAmazigh", "cultureFestival", "cultureHeritage", "cultureCeremony"]}
+      />
+
+      <MotifDivider />
+
+      <p className="text-xs text-ink/50 italic mt-8">
+        Ne pas transformer ceci en un programme culturel plus large en
+        l&apos;absence d&apos;un programme officiel fourni.
+      </p>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\development\page.tsx =====
+
+"use client";
+
+import { motion } from "framer-motion";
+import SectionHeader from "@/components/SectionHeader";
+import ForumYearTabs from "@/components/ForumYearTabs";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+import { programmeThemes } from "@/content/development";
+import { LayoutGrid, Wifi, Building2, Leaf, HeartHandshake, TrendingUp } from "lucide-react";
+
+const icons: Record<string, React.ReactNode> = {
+  digital: <Wifi size={20} />,
+  "local-dev": <LayoutGrid size={20} />,
+  infrastructure: <Building2 size={20} />,
+  environment: <Leaf size={20} />,
+  social: <HeartHandshake size={20} />,
+  economy: <TrendingUp size={20} />,
+};
+
+export default function DevelopmentPage() {
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Oulmès"
+        title="Forum de développement local d'Oulmès"
+        description="Un rendez-vous documenté autour du développement local, de l'agriculture, de l'élevage Oulmès-Zaër, de la culture amazighe et de la société civile."
+      />
+
+      <div className="mb-10">
+        <ForumYearTabs />
+      </div>
+
+      <ImageGallery
+        imageKeys={["developmentForum2022", "developmentForum2023", "developmentForum2024", "developmentForum2025", "developmentForumGroup"]}
+        className="mb-16"
+      />
+
+      <MotifDivider />
+
+      <div className="mt-16">
+        <SectionHeader
+          eyebrow="Oulmès 2023–2028"
+          title="Programme d'action communal"
+          description="Thématiques documentées dans la consultation autour du Programme d'Action Communale 2023–2028. Ces thématiques ne constituent pas des engagements sauf indication officielle contraire."
+        />
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {programmeThemes.map((theme, i) => (
+            <motion.div
+              key={theme.id}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
+              className="border border-clay/30 p-5 flex flex-col gap-3 bg-ivory"
+            >
+              <span className="text-green-moroccan">{icons[theme.id]}</span>
+              <span className="text-sm font-medium text-ink">
+                {theme.labelFr}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\education\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function EducationPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader eyebrow="Éducation & Jeunesse" title="Éducation & Jeunesse" />
+      <p className="text-editorial text-ink/80 mb-8">
+        Sujets parlementaires documentés incluant la formation des
+        enseignants d&apos;éducation physique, le personnel administratif de
+        l&apos;éducation, les bourses universitaires pour les étudiants de la
+        province de Khémisset, et la formation professionnelle.
+      </p>
+
+      <ImageGallery
+        imageKeys={["educationSchool", "educationStudents", "educationScholarship", "educationTeachers", "educationCampus"]}
+      />
+
+      <MotifDivider />
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div className="border border-clay/30 p-4 text-center text-sm">Éducation</div>
+        <div className="border border-clay/30 p-4 text-center text-sm">Formation</div>
+        <div className="border border-clay/30 p-4 text-center text-sm">Soutien étudiant</div>
+        <div className="border border-clay/30 p-4 text-center text-sm">Jeunesse</div>
+      </div>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\health\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function HealthPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader eyebrow="Santé" title="Santé" />
+      <p className="text-editorial text-ink/80 mb-4">
+        Une publication du PAM en 2026 rapporte qu&apos;Achrourou a évoqué la
+        réforme de la santé et l&apos;importance d&apos;un personnel médical
+        qualifié.
+      </p>
+      <p className="text-xs text-ink/50 italic mb-8">
+        Position exprimée lors d&apos;une discussion parlementaire — non une
+        affirmation objective de résultats obtenus.
+      </p>
+
+      <ImageGallery
+        imageKeys={["healthCampaign", "healthClinic", "healthMedicalTeam", "healthCenter", "healthCampaign2"]}
+      />
+
+      <MotifDivider />
+
+      <ul className="list-disc list-inside text-ink/80 space-y-1 mt-8">
+        <li>Réforme de la santé</li>
+        <li>Santé rurale</li>
+        <li>Personnel médical et paramédical</li>
+        <li>Disponibilité des médicaments</li>
+        <li>Campagnes médicales locales</li>
+      </ul>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\media\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function MediaPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Transparence"
+        title="Couverture médiatique et controverses publiques"
+        description="Cette page distingue les allégations et litiges rapportés des faits établis."
+      />
+
+      <ImageGallery
+        imageKeys={["mediaCoverage", "mediaInterview", "mediaPressConference", "mediaPublication", "mediaEvent"]}
+        className="mb-10"
+      />
+
+      <section className="border border-clay/30 bg-ivory p-6 mb-8">
+        <span className="inline-block text-[10px] uppercase tracking-[0.15em] bg-burgundy/10 text-burgundy px-2 py-1 mb-4">
+          Litige rapporté
+        </span>
+
+        <h2 className="text-xl font-semibold text-ink mb-3">
+          Litige concernant un marché public — gare routière d&apos;Oulmès
+          (2025)
+        </h2>
+
+        <div className="space-y-4 text-ink/80 leading-relaxed">
+          <div>
+            <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+              Ce qui a été rapporté
+            </h3>
+            <p>
+              Des reportages médiatiques en 2025 ont décrit un litige
+              concernant la procédure de passation de marché du projet de
+              gare routière d&apos;Oulmès et rapporté une plainte relative à la
+              procédure d&apos;appel d&apos;offres.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+              Réponse officielle
+            </h3>
+            <p className="italic text-ink/60">
+              Réponse officielle : non trouvée dans les sources examinées.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
+              Statut actuel
+            </h3>
+            <p className="italic text-ink/60">À vérifier.</p>
+          </div>
+        </div>
+
+        <p className="text-xs text-ink/50 mt-6 border-t border-clay/20 pt-4">
+          Cette page sera mise à jour si une réponse officielle vérifiée
+          devient disponible. Les allégations rapportées ne constituent pas
+          des faits établis.
+        </p>
+      </section>
+
+      <p className="text-sm text-ink/60">
+        Aucune autre controverse documentée n&apos;a été identifiée dans les
+        sources examinées à ce jour.
+      </p>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\oulmes\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ImageGallery from "@/components/ImageGallery";
+import { images } from "@/config/images";
+import Link from "next/link";
+import { projects } from "@/content/projects";
+import ProjectCard from "@/components/ProjectCard";
+import MotifDivider from "@/components/MotifDivider";
+
+const oulmesAreas = [
+  {
+    href: "/agriculture",
+    title: "Territoire & Agriculture",
+    description: "Éleveurs, race bovine Oulmès-Zaër, économie rurale.",
+  },
+  {
+    href: "/water-environment",
+    title: "Eau & Environnement",
+    description: "Accès à l'eau potable, gestion durable, écologie.",
+  },
+  {
+    href: "/health",
+    title: "Santé",
+    description: "Réforme de la santé, personnel médical, campagnes locales.",
+  },
+  {
+    href: "/education",
+    title: "Éducation & Jeunesse",
+    description: "Formation, bourses, encadrement des jeunes.",
+  },
+  {
+    href: "/culture",
+    title: "Culture & Identité",
+    description: "Culture amazighe, régionalisation avancée.",
+  },
+];
+
+export default function OulmesPage() {
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="العمل في أولماس"
+        title="Action à Oulmès"
+        description="Ces projets et initiatives sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet."
+      />
+
+      <ImagePlaceholder
+        src={images.oulmesLandscape}
+        alt="Oulmès"
+        label="oulmes-landscape.jpg"
+        aspectRatio="21/9"
+        className="mb-8"
+      />
+
+      <ImageGallery
+        imageKeys={["oulmesTown", "oulmesCommune", "oulmesMarket", "oulmesMountains", "cultureOulmes"]}
+        className="mb-12"
+      />
+
+      <section className="mb-16">
+        <h2 className="text-xl font-semibold text-ink mb-6 tracking-tight">
+          Projets communaux documentés
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              href={`/projects/${project.id}`}
+            />
+          ))}
+        </div>
+      </section>
+
+      <MotifDivider />
+
+      <section className="mt-16">
+        <h2 className="text-xl font-semibold text-ink mb-6 tracking-tight">
+          Thématiques locales
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {oulmesAreas.map((area) => (
+            <Link
+              key={area.href}
+              href={area.href}
+              className="border border-clay/30 p-5 hover:border-ink/40 transition-colors"
+            >
+              <h3 className="font-medium text-ink mb-2">{area.title}</h3>
+              <p className="text-sm text-ink/70">{area.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\parliament\page.tsx =====
+
+"use client";
+
+import { useMemo, useState } from "react";
+import { parliamentQuestions, ParliamentCategory } from "@/content/parliament";
+import FilterBar from "@/components/FilterBar";
+import ParliamentaryQuestionCard from "@/components/ParliamentaryQuestionCard";
+import SourceBadge from "@/components/SourceBadge";
+import { sources } from "@/content/sources";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function ParliamentPage() {
+  const [activeCategory, setActiveCategory] = useState(
+    "ALL" as ParliamentCategory | "ALL"
+  );
+
+  const filteredQuestions = useMemo(() => {
+    const sorted = [...parliamentQuestions].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    if (activeCategory === "ALL") return sorted;
+    return sorted.filter((q) => q.category === activeCategory);
+  }, [activeCategory]);
+
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <header className="mb-10 max-w-2xl">
+        <h1 className="text-3xl md:text-4xl font-semibold text-ink mb-3 tracking-tight">
+          Activité parlementaire
+        </h1>
+        <p className="text-ink/70">
+          {parliamentQuestions.length} questions parlementaires sont
+          actuellement recensées sur le profil de la Chambre des
+          Représentants pour la législature 2021–2026.
+        </p>
+        <div className="mt-4">
+          <SourceBadge
+            source={sources.parliamentProfile.name}
+            url={sources.parliamentProfile.url}
+          />
+        </div>
+      </header>
+
+      <ImageGallery
+        imageKeys={["parliament", "parliamentSpeech", "parliamentSession", "parliamentCommittee", "parliamentDebate"]}
+      />
+
+      <MotifDivider />
+
+      <div className="my-8">
+        <FilterBar active={activeCategory} onChange={setActiveCategory} />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {filteredQuestions.map((q) => (
+          <ParliamentaryQuestionCard key={q.id} question={q} />
+        ))}
+      </div>
+
+      {filteredQuestions.length === 0 && (
+        <p className="text-ink/50 text-sm mt-6">
+          Aucune question dans cette catégorie pour le moment.
+        </p>
+      )}
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\projects\ecological-baths\page.tsx =====
+
+import { projects } from "@/content/projects";
+import SourceBadge from "@/components/SourceBadge";
+import ImageGallery from "@/components/ImageGallery";
+import { notFound } from "next/navigation";
+
+export default function EcologicalBathsPage() {
+  const project = projects.find((p) => p.id === "ecological-baths");
+  if (!project) return notFound();
+
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <span className="text-xs uppercase tracking-[0.2em] text-green-moroccan font-medium">
+        Étude de cas — Projet
+      </span>
+      <h1 className="text-3xl md:text-4xl font-semibold text-ink mt-2 mb-8">
+        {project.titleFr}
+      </h1>
+
+      <ImageGallery
+        imageKeys={["ecologicalBaths", "climateAward", "oulmesLandscape", "waterInfrastructure", "environmentConservation"]}
+        className="mb-10"
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div>
+          <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
+            Projet
+          </h2>
+          <p className="text-ink/80 leading-relaxed">
+            {project.descriptionFr}
+          </p>
+        </div>
+
+        {project.partners && (
+          <div>
+            <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
+              Partenaires
+            </h2>
+            <ul className="list-disc list-inside text-ink/80 space-y-1">
+              {project.partners.map((partner) => (
+                <li key={partner}>{partner}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      {project.recognition && (
+        <div className="border-t border-clay/30 pt-6 mb-8">
+          <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
+            Reconnaissance
+          </h2>
+          <p className="text-ink/80">
+            {project.recognition.fr} — {project.recognition.date}
+          </p>
+          <p className="text-xs text-ink/50 mt-2 italic">
+            La commune d&apos;Oulmès a reçu ce prix. Cela ne signifie pas que
+            Mohamed Achrourou a personnellement remporté un prix climatique
+            international.
+          </p>
+        </div>
+      )}
+
+      <SourceBadge source={project.source.name} url={project.source.url} />
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\projects\page.tsx =====
+
+import { projects } from "@/content/projects";
+import ProjectCard from "@/components/ProjectCard";
+import SectionHeader from "@/components/SectionHeader";
+
+export default function ProjectsPage() {
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Oulmès"
+        title="Projets et initiatives documentés"
+        description="Ces projets sont associés à la commune d'Oulmès durant le mandat d'Achrourou en tant que président de la commune ; cela ne signifie pas nécessairement qu'il a personnellement exécuté chaque projet."
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            href={`/projects/${project.id}`}
+          />
+        ))}
+      </div>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\sources\verification\page.tsx =====
+
+import { notFound } from "next/navigation";
+
+const checklistItems = [
+  "Confirmer le nom arabe complet",
+  "Confirmer l'orthographe latine préférée",
+  "Confirmer les informations de naissance",
+  "Confirmer l'école d'ingénieur",
+  "Confirmer le CV professionnel complet",
+  "Confirmer la chronologie politique",
+  "Confirmer les comptes sociaux officiels",
+  "Confirmer la documentation de candidature 2026",
+  "Confirmer l'identité de campagne",
+  "Confirmer la liste des projets",
+  "Confirmer les budgets de projets le cas échéant",
+  "Obtenir les photos originales des projets",
+  "Obtenir les documents parlementaires",
+  "Obtenir une réponse officielle concernant la controverse de marché public rapportée",
+  "Vérifier chaque statistique",
+  "Vérifier chaque citation",
+];
+
+export default function VerificationPage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
+  return (
+    <main className="max-w-3xl mx-auto px-6 py-16">
+      <span className="text-xs uppercase tracking-[0.2em] text-burgundy font-medium">
+        Interne — avant lancement
+      </span>
+      <h1 className="text-3xl font-semibold text-ink mt-2 mb-2">
+        Vérifier avant lancement
+      </h1>
+      <p className="text-ink/60 mb-10">
+        Cette page est un outil de travail interne et devrait être masquée
+        des builds de production publics.
+      </p>
+
+      <ul className="space-y-3">
+        {checklistItems.map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <span className="mt-1 w-4 h-4 border border-ink/40 flex-shrink-0" />
+            <span className="text-ink/80">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\sources\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import { sources } from "@/content/sources";
+import SourceBadge from "@/components/SourceBadge";
+
+export default function SourcesPage() {
+  const sourceList = Object.values(sources);
+
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Transparence"
+        title="Sources"
+        description="Tout ce qui est présenté sur ce site devrait pouvoir être tracé jusqu'à une source vérifiable."
+      />
+
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold text-ink mb-4">
+          Comment nous sourçons l&apos;information
+        </h2>
+        <ul className="space-y-2 text-ink/80 list-disc list-inside">
+          <li>
+            Les sources officielles du Parlement sont priorisées pour
+            l&apos;activité parlementaire.
+          </li>
+          <li>
+            Les sources municipales officielles sont priorisées pour les
+            projets communaux.
+          </li>
+          <li>
+            Les sources officielles du PAM sont utilisées pour les
+            déclarations du parti.
+          </li>
+          <li>
+            Les médias réputés sont utilisés pour le contexte historique et
+            le reportage.
+          </li>
+          <li>Les allégations contestées sont clairement identifiées.</li>
+          <li>
+            Les allégations ne sont jamais présentées comme des faits établis.
+          </li>
+        </ul>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {sourceList.map((source) => (
+          <SourceBadge key={source.id} source={source.name} url={source.url} />
+        ))}
+      </section>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\timeline\page.tsx =====
+
+import Timeline from "@/components/Timeline";
+import SectionHeader from "@/components/SectionHeader";
+import ImageGallery from "@/components/ImageGallery";
+import MotifDivider from "@/components/MotifDivider";
+
+export default function TimelinePage() {
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Parcours"
+        title="Un parcours entre expertise, territoire et service public"
+      />
+
+      <ImageGallery
+        imageKeys={["portraitFieldVisit", "portraitEventSpeech", "parliament", "oulmesCommune", "developmentForumGroup"]}
+        className="mb-12"
+      />
+
+      <MotifDivider />
+
+      <div className="mt-8">
+        <Timeline />
+      </div>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\transparency\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+
+const recordSections = [
+  { label: "Biographie", href: "/biography" },
+  { label: "Parcours politique", href: "/timeline" },
+  { label: "Activité parlementaire", href: "/parliament" },
+  { label: "Projets locaux", href: "/projects" },
+  { label: "Sources", href: "/sources" },
+  { label: "Couverture médiatique", href: "/media" },
+];
+
+export default function TransparencyPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Public Record"
+        title="Registre public"
+        description="Ce site vise à donner une vue transparente, sourcée et vérifiable du parcours et de l'activité de Mohamed Achrourou."
+      />
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        {recordSections.map((section) => (
+          <Link
+            key={section.href}
+            href={section.href}
+            className="border border-clay/30 p-4 hover:border-ink/40 transition-colors text-ink/80"
+          >
+            {section.label}
+          </Link>
+        ))}
+      </section>
+
+      <section className="border-t border-clay/30 pt-8">
+        <h2 className="text-lg font-semibold text-ink mb-2">Corrections</h2>
+        <p className="text-ink/70 mb-6">
+          Si une information présentée sur ce site est inexacte ou incomplète,
+          merci de nous contacter afin qu&apos;elle puisse être corrigée.
+        </p>
+        <p className="text-sm text-ink/50">
+          Dernière mise à jour : {siteConfig.lastUpdated}
+        </p>
+      </section>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\transport\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import ParliamentaryQuestionCard from "@/components/ParliamentaryQuestionCard";
+import { parliamentQuestions } from "@/content/parliament";
+import HomeMap from "@/components/HomeMap";
+import ImageGallery from "@/components/ImageGallery";
+import MotifDivider from "@/components/MotifDivider";
+
+export default function TransportPage() {
+  const transportQuestions = parliamentQuestions.filter(
+    (q) => q.category === "Infrastructure" || q.category === "Transport"
+  );
+
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Territoire"
+        title="Transport & Infrastructure"
+        description="Route régionale 704, routes provinciales 4316 et 4325, routes rurales, sécurité routière, connexion ferroviaire à Khémisset."
+      />
+
+      <ImageGallery
+        imageKeys={["road704", "road4316", "transportBridge", "transportRoad", "transportInfrastructure"]}
+        className="mb-12"
+      />
+
+      <div className="mb-12">
+        <HomeMap />
+      </div>
+
+      <MotifDivider />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+        {transportQuestions.map((q) => (
+          <ParliamentaryQuestionCard key={q.id} question={q} />
+        ))}
+      </div>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\water-environment\page.tsx =====
+
+import SectionHeader from "@/components/SectionHeader";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function WaterEnvironmentPage() {
+  return (
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <SectionHeader
+        eyebrow="Eau & Environnement"
+        title="Eau & Environnement"
+      />
+      <p className="text-editorial text-ink/80 mb-6">
+        Thématiques documentées dans son activité parlementaire et locale :
+        accès à l&apos;eau potable, ressources en eau, gestion durable de
+        l&apos;eau, développement écologique.
+      </p>
+      <div className="flex flex-wrap gap-3 text-sm mb-8">
+        <span className="border border-clay/40 px-3 py-1">Eau</span>
+        <span className="border border-clay/40 px-3 py-1">Environnement</span>
+        <span className="border border-clay/40 px-3 py-1">Territoire</span>
+        <span className="border border-clay/40 px-3 py-1">Durabilité</span>
+      </div>
+
+      <ImageGallery
+        imageKeys={["waterSupply", "waterInfrastructure", "environmentLandscape", "environmentConservation", "waterWell"]}
+      />
+
+      <MotifDivider />
+
+      <p className="text-ink/70 mt-8">
+        Voir aussi le projet des{" "}
+        <a href="/projects/ecological-baths" className="underline text-green-moroccan">
+          Bains écologiques d&apos;Oulmès
+        </a>.
+      </p>
+    </main>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\layout.tsx =====
+
+import type { Metadata } from "next";
+import { Inter, Noto_Sans_Arabic } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Mohamed Achrourou | محمد أشرورو — Khémisset Oulmès",
+  description:
+    "Parcours professionnel, expérience politique, activité parlementaire et initiatives locales de Mohamed Achrourou.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="fr" dir="ltr" className={`${inter.variable} ${notoSansArabic.variable}`}>
+      <body className="flex flex-col min-h-screen font-sans">
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\app\page.tsx =====
+
+import Hero from "@/components/Hero";
+import StatsSection from "@/components/StatsSection";
+import StoryFlow from "@/components/StoryFlow";
+import FourPillars from "@/components/FourPillars";
+import ParliamentFeed from "@/components/ParliamentFeed";
+import OulmesPreview from "@/components/OulmesPreview";
+import SourceCategories from "@/components/SourceCategories";
+import HomeMap from "@/components/HomeMap";
+import MotifDivider from "@/components/MotifDivider";
+import ImageGallery from "@/components/ImageGallery";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <MotifDivider />
+      <StatsSection />
+      <StoryFlow />
+      <FourPillars />
+
+      <MotifDivider />
+      <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
+        <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-8 tracking-tight">
+          Territoire — Khémisset &amp; Oulmès
+        </h2>
+        <HomeMap />
+
+        <div className="mt-10">
+          <ImageGallery
+            imageKeys={["oulmesLandscape", "oulmesTown", "oulmesMountains", "agricultureFields", "cultureOulmes"]}
+          />
+        </div>
+      </section>
+
+      <ParliamentFeed />
+      <MotifDivider />
+      <OulmesPreview />
+      <SourceCategories />
+    </main>
+  );
+}

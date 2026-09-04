@@ -1,0 +1,1116 @@
+﻿
+===== C:\Users\hp\mohamed-achrourou\src\components\FilterBar.tsx =====
+
+"use client";
+
+import { ParliamentCategory } from "@/content/parliament";
+
+const categories: (ParliamentCategory | "ALL")[] = [
+  "ALL",
+  "Infrastructure",
+  "Transport",
+  "Health",
+  "Education",
+  "Agriculture",
+  "Water",
+  "Employment",
+  "Local Government",
+  "Economy",
+  "Environment",
+  "Other",
+];
+
+type Props = {
+  active: ParliamentCategory | "ALL";
+  onChange: (category: ParliamentCategory | "ALL") => void;
+};
+
+export default function FilterBar({ active, onChange }: Props) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => onChange(cat)}
+          className={`px-3 py-1.5 text-sm border transition-colors ${
+            active === cat
+              ? "bg-ink text-ivory border-ink"
+              : "bg-transparent text-ink/70 border-clay/40 hover:border-ink/60"
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\Footer.tsx =====
+
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+
+const footerLinks = [
+  { label: "Biographie", href: "/biography" },
+  { label: "Parlement", href: "/parliament" },
+  { label: "Oulmès", href: "/projects" },
+  { label: "Sources", href: "/sources" },
+  { label: "Transparence", href: "/transparency" },
+  { label: "Contact", href: "/contact" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-clay/30 bg-ivory mt-20">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8">
+          <div>
+            <p className="text-lg font-semibold text-ink">
+              {siteConfig.name.ar}
+            </p>
+            <p className="text-ink/70">{siteConfig.name.fr}</p>
+            <p className="text-sm text-ink/50 mt-1">
+              {siteConfig.constituency.fr}
+            </p>
+          </div>
+
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-ink/70 hover:text-ink"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div className="border-t border-clay/20 mt-8 pt-6 text-xs text-ink/50 flex flex-col md:flex-row md:justify-between gap-2">
+          <span>Dernière mise à jour : {siteConfig.lastUpdated}</span>
+          <span>
+            Les informations sont présentées avec leurs sources lorsqu&apos;elles
+            sont disponibles.
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ForumYearTabs.tsx =====
+
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { forumEditions, forumThemes } from "@/content/development";
+
+export default function ForumYearTabs() {
+  const [active, setActive] = useState(forumEditions[forumEditions.length - 1].year);
+  const activeEdition = forumEditions.find((e) => e.year === active);
+
+  return (
+    <div>
+      <div className="flex gap-2 mb-8 border-b border-clay/30">
+        {forumEditions.map((edition) => (
+          <button
+            key={edition.year}
+            onClick={() => setActive(edition.year)}
+            className={`relative px-4 py-3 text-sm font-medium transition-colors ${
+              active === edition.year
+                ? "text-ink"
+                : "text-ink/40 hover:text-ink/70"
+            }`}
+          >
+            {edition.year}
+            {active === edition.year && (
+              <motion.span
+                layoutId="forum-tab-underline"
+                className="absolute left-0 right-0 -bottom-px h-[2px] bg-green-moroccan"
+              />
+            )}
+          </button>
+        ))}
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+        >
+          {activeEdition?.hasDocumentedDetails ? (
+            <p className="text-ink/80">Détails de l&apos;édition {active}.</p>
+          ) : (
+            <div className="border border-dashed border-clay/40 p-6">
+              <p className="text-ink/70 mb-4">
+                Détails spécifiques de l&apos;édition {active} du Forum de
+                développement local d&apos;Oulmès — à vérifier.
+              </p>
+              <p className="text-sm text-ink/50 uppercase tracking-[0.1em] mb-3">
+                Thématiques généralement rapportées dans la couverture du
+                forum
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {forumThemes.map((theme) => (
+                  <span
+                    key={theme}
+                    className="text-xs px-3 py-1.5 border border-clay/40 text-ink/70"
+                  >
+                    {theme}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\FourPillars.tsx =====
+
+import Link from "next/link";
+import { Landmark, MapPin, TreePine, User } from "lucide-react";
+
+const pillars = [
+  {
+    href: "/parliament",
+    icon: Landmark,
+    title: "Parlement",
+    description: "Son activité et bilan parlementaires.",
+  },
+  {
+    href: "/oulmes",
+    icon: MapPin,
+    title: "Oulmès",
+    description: "Activité au niveau de la commune locale.",
+  },
+  {
+    href: "/transport",
+    icon: TreePine,
+    title: "Territoire",
+    description: "Infrastructure, agriculture, eau et développement.",
+  },
+  {
+    href: "/biography",
+    icon: User,
+    title: "Parcours",
+    description: "Biographie professionnelle et politique.",
+  },
+];
+
+export default function FourPillars() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pillars.map((pillar) => {
+          const Icon = pillar.icon;
+          return (
+            <Link
+              key={pillar.href}
+              href={pillar.href}
+              className="border border-clay/30 p-6 hover:border-ink/40 hover:-translate-y-0.5 transition-all bg-ivory"
+            >
+              <Icon className="text-green-moroccan mb-4" size={24} />
+              <h3 className="font-semibold text-ink mb-2">{pillar.title}</h3>
+              <p className="text-sm text-ink/70">{pillar.description}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\Hero.tsx =====
+
+import Link from "next/link";
+import ImagePlaceholder from "./ImagePlaceholder";
+import { images } from "@/config/images";
+import { siteConfig } from "@/config/site";
+
+export default function Hero() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <p className="text-3xl text-ink/50 mb-3 font-arabic">
+          {siteConfig.name.ar}
+        </p>
+        <h1 className="text-display md:text-display-lg font-semibold text-ink leading-[1.05] mb-6 tracking-tight">
+          {siteConfig.name.fr}
+        </h1>
+        <p className="text-ink/70 mb-1 text-lg">
+          Ingénieur · Élu local · Parlementaire
+        </p>
+        <p className="text-ink/70 mb-8 text-lg">{siteConfig.constituency.fr}</p>
+
+        <p className="text-editorial text-ink/80 mb-10 max-w-prose2">
+          Découvrez son parcours professionnel, son expérience politique, son
+          activité parlementaire et les initiatives documentées au niveau
+          local.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/biography"
+            className="px-6 py-3.5 bg-ink text-ivory text-sm font-medium tracking-wide hover:bg-ink/90 transition-colors"
+          >
+            Découvrir le parcours
+          </Link>
+          <Link
+            href="/parliament"
+            className="px-6 py-3.5 border border-ink/30 text-ink text-sm font-medium tracking-wide hover:border-ink transition-colors"
+          >
+            Voir l&apos;activité parlementaire
+          </Link>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        src={images.hero}
+        alt="Mohamed Achrourou"
+        label="hero-mohamed-achrourou.jpg"
+        aspectRatio="4/5"
+      />
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\HomeMap.tsx =====
+
+"use client";
+
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("@/components/Map"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[420px] border border-clay/30 flex items-center justify-center text-ink/40 text-sm">
+      Chargement de la carte...
+    </div>
+  ),
+});
+
+export default function HomeMap() {
+  return <Map />;
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ImageGallery.tsx =====
+
+import ImagePlaceholder from "./ImagePlaceholder";
+import { images, ImageKey } from "@/config/images";
+
+type ImageGalleryProps = {
+  imageKeys: ImageKey[];
+  className?: string;
+};
+
+export default function ImageGallery({ imageKeys, className = "" }: ImageGalleryProps) {
+  return (
+    <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 ${className}`}>
+      {imageKeys.map((key) => (
+        <ImagePlaceholder
+          key={key}
+          src={images[key]}
+          alt={key}
+          label={images[key].replace("/images/", "")}
+          aspectRatio="4/3"
+        />
+      ))}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ImagePlaceholder.tsx =====
+
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+type ImagePlaceholderProps = {
+  src: string;
+  alt: string;
+  label: string;
+  aspectRatio?: string; // e.g. "16/9", "4/3", "1/1"
+  className?: string;
+};
+
+export default function ImagePlaceholder({
+  src,
+  alt,
+  label,
+  aspectRatio = "16/9",
+  className = "",
+}: ImagePlaceholderProps) {
+  const [failed, setFailed] = useState(false);
+
+  if (!failed) {
+    return (
+      <div
+        className={`relative w-full overflow-hidden ${className}`}
+        style={{ aspectRatio }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`relative w-full flex flex-col items-center justify-center gap-2 bg-sandstone/30 border border-clay/40 text-ink/60 ${className}`}
+      style={{ aspectRatio }}
+      role="img"
+      aria-label={alt}
+    >
+      <span className="text-[11px] tracking-[0.2em] uppercase font-medium">
+        Photo placeholder
+      </span>
+      <span className="text-xs font-mono px-4 text-center">ADD: {label}</span>
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\LanguageSwitcher.tsx =====
+
+"use client";
+
+import { useState } from "react";
+
+type Lang = "fr" | "ar" | "en";
+
+const languages: { code: Lang; label: string }[] = [
+  { code: "fr", label: "FR" },
+  { code: "ar", label: "ع" },
+  { code: "en", label: "EN" },
+];
+
+export default function LanguageSwitcher() {
+  const [active, setActive] = useState<Lang>("fr");
+
+  function handleChange(lang: Lang) {
+    setActive(lang);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("preferredLang", lang);
+    }
+    // Actual routing/i18n wiring happens in a later step once locale routes exist.
+  }
+
+  return (
+    <div className="flex items-center gap-1 border border-clay/40 rounded-full p-0.5">
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => handleChange(lang.code)}
+          className={`px-2.5 py-1 text-xs rounded-full transition-colors ${
+            active === lang.code
+              ? "bg-ink text-ivory"
+              : "text-ink/60 hover:text-ink"
+          }`}
+        >
+          {lang.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\Map.tsx =====
+
+"use client";
+
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import { mapLocations } from "@/content/locations";
+import { parliamentQuestions } from "@/content/parliament";
+import Link from "next/link";
+
+const markerIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+export default function Map() {
+  return (
+    <div className="w-full h-[420px] border border-clay/30 overflow-hidden">
+      <MapContainer
+        center={[33.6, -6.05]}
+        zoom={10}
+        scrollWheelZoom={false}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {mapLocations.map((loc) => {
+          const related = parliamentQuestions.filter((q) =>
+            loc.relatedQuestionIds.includes(q.id)
+          );
+          return (
+            <Marker key={loc.id} position={[loc.lat, loc.lng]} icon={markerIcon}>
+              <Popup>
+                <strong>{loc.name}</strong>
+                {related.length > 0 && (
+                  <ul className="mt-2 space-y-1">
+                    {related.map((q) => (
+                      <li key={q.id}>
+                        <Link
+                          href="/parliament"
+                          className="text-green-moroccan underline text-sm"
+                        >
+                          {q.titleFr}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Popup>
+            </Marker>
+          );
+        })}
+      </MapContainer>
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\MotifDivider.tsx =====
+
+export default function MotifDivider() {
+  return (
+    <div className="max-w-6xl mx-auto px-6" aria-hidden="true">
+      <svg
+        width="100%"
+        height="24"
+        viewBox="0 0 400 24"
+        preserveAspectRatio="none"
+        className="text-clay/40"
+      >
+        <line x1="0" y1="12" x2="150" y2="12" stroke="currentColor" strokeWidth="1" />
+        <polygon points="200,2 210,12 200,22 190,12" fill="currentColor" />
+        <line x1="250" y1="12" x2="400" y2="12" stroke="currentColor" strokeWidth="1" />
+      </svg>
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\Navbar.tsx =====
+
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
+
+const navLinks = [
+  { href: "/biography", label: "Biographie" },
+  { href: "/parliament", label: "Parlement" },
+  { href: "/oulmes", label: "Oulmès" },
+  { href: "/projects", label: "Projets" },
+  { href: "/timeline", label: "Parcours" },
+  { href: "/media", label: "Médias" },
+  { href: "/transparency", label: "Transparence" },
+  { href: "/sources", label: "Sources" },
+  { href: "/2026", label: "2026" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur border-b border-clay/30">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="font-semibold text-ink tracking-tight">
+          Mohamed Achrourou
+        </Link>
+
+        <nav className="hidden lg:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-ink/70 hover:text-ink transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <LanguageSwitcher />
+        </nav>
+
+        <button
+          className="lg:hidden text-ink"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {open && (
+        <nav className="lg:hidden border-t border-clay/30 bg-ivory px-6 py-4 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-ink/80"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <LanguageSwitcher />
+        </nav>
+      )}
+    </header>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\OulmesPreview.tsx =====
+
+import Link from "next/link";
+import ImagePlaceholder from "./ImagePlaceholder";
+import { images } from "@/config/images";
+import { projects } from "@/content/projects";
+
+export default function OulmesPreview() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl md:text-3xl font-semibold text-ink">
+          Oulmès
+        </h2>
+        <Link
+          href="/oulmes"
+          className="text-sm text-green-moroccan underline underline-offset-2 hidden md:block"
+        >
+          Voir l&apos;action à Oulmès →
+        </Link>
+      </div>
+
+      <ImagePlaceholder
+        src={images.oulmesLandscape}
+        alt="Oulmès"
+        label="oulmes-landscape.jpg"
+        aspectRatio="21/9"
+        className="mb-10"
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {projects.map((project) => (
+          <Link
+            key={project.id}
+            href={`/projects/${project.id}`}
+            className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
+          >
+            <h3 className="text-sm font-medium text-ink mb-1">
+              {project.titleFr}
+            </h3>
+            {project.recognition && (
+              <p className="text-xs text-green-moroccan">
+                {project.recognition.date}
+              </p>
+            )}
+          </Link>
+        ))}
+        <Link
+          href="/development"
+          className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
+        >
+          <h3 className="text-sm font-medium text-ink mb-1">
+            Forum de développement local
+          </h3>
+        </Link>
+        <Link
+          href="/development"
+          className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
+        >
+          <h3 className="text-sm font-medium text-ink mb-1">
+            Programme d&apos;action communal 2023–2028
+          </h3>
+        </Link>
+      </div>
+
+      <Link
+        href="/oulmes"
+        className="text-sm text-green-moroccan underline underline-offset-2 mt-8 inline-block md:hidden"
+      >
+        Voir l&apos;action à Oulmès →
+      </Link>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ParliamentaryQuestionCard.tsx =====
+
+import { ParliamentQuestion } from "@/content/parliament";
+import SourceBadge from "./SourceBadge";
+
+type Props = {
+  question: ParliamentQuestion;
+};
+
+function formatDate(iso: string): string {
+  const d = new Date(iso);
+  return d.toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export default function ParliamentaryQuestionCard({ question }: Props) {
+  return (
+    <div className="border border-clay/30 bg-ivory p-5 flex flex-col gap-3">
+      <span className="inline-block w-fit text-[10px] uppercase tracking-[0.15em] bg-green-moroccan/10 text-green-moroccan px-2 py-1">
+        {question.category}
+      </span>
+
+      <h3 className="text-lg font-semibold leading-snug text-ink">
+        {question.titleFr}
+      </h3>
+
+      <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-ink/70">
+        <span>
+          <strong className="text-ink/50 uppercase text-[10px] tracking-[0.1em] block">
+            Date
+          </strong>
+          {formatDate(question.date)}
+        </span>
+        {question.ministry && (
+          <span>
+            <strong className="text-ink/50 uppercase text-[10px] tracking-[0.1em] block">
+              Ministère
+            </strong>
+            {question.ministry}
+          </span>
+        )}
+      </div>
+
+      {question.descriptionFr && (
+        <p className="text-sm text-ink/80">{question.descriptionFr}</p>
+      )}
+
+      <div className="text-sm text-ink/60 italic">
+        {question.responseStatus}
+      </div>
+
+      <SourceBadge source={question.source.name} url={question.source.url} />
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ParliamentFeed.tsx =====
+
+import Link from "next/link";
+import { parliamentQuestions } from "@/content/parliament";
+
+export default function ParliamentFeed() {
+  const latest = [...parliamentQuestions]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 5);
+
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
+      <div className="flex items-center justify-between mb-10">
+        <h2 className="text-2xl md:text-3xl font-semibold text-ink">
+          Dernière activité parlementaire
+        </h2>
+        <Link
+          href="/parliament"
+          className="text-sm text-green-moroccan underline underline-offset-2 hidden md:block"
+        >
+          Voir le registre complet →
+        </Link>
+      </div>
+
+      <div className="divide-y divide-clay/20 border-y border-clay/20">
+        {latest.map((q) => (
+          <div
+            key={q.id}
+            className="flex flex-col md:flex-row md:items-center justify-between gap-2 py-4"
+          >
+            <div>
+              <span className="text-xs uppercase tracking-[0.1em] text-ink/40 mr-3">
+                {new Date(q.date).toLocaleDateString("fr-FR", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+              </span>
+              <span className="text-ink font-medium">{q.titleFr}</span>
+            </div>
+            <span className="text-xs text-green-moroccan">{q.category}</span>
+          </div>
+        ))}
+      </div>
+
+      <Link
+        href="/parliament"
+        className="text-sm text-green-moroccan underline underline-offset-2 mt-6 inline-block md:hidden"
+      >
+        Voir le registre complet →
+      </Link>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\ProjectCard.tsx =====
+
+import Link from "next/link";
+import { Project } from "@/content/projects";
+
+type Props = {
+  project: Project;
+  href: string;
+};
+
+export default function ProjectCard({ project, href }: Props) {
+  return (
+    <Link
+      href={href}
+      className="block border border-clay/30 bg-ivory p-6 hover:border-ink/40 transition-colors"
+    >
+      <h3 className="text-lg font-semibold text-ink mb-2">
+        {project.titleFr}
+      </h3>
+      {project.recognition && (
+        <p className="text-sm text-green-moroccan mb-2">
+          {project.recognition.fr} — {project.recognition.date}
+        </p>
+      )}
+      {project.descriptionFr && (
+        <p className="text-sm text-ink/70 line-clamp-3">
+          {project.descriptionFr}
+        </p>
+      )}
+    </Link>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\SectionHeader.tsx =====
+
+type SectionHeaderProps = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  align?: "left" | "center";
+};
+
+export default function SectionHeader({
+  eyebrow,
+  title,
+  description,
+  align = "left",
+}: SectionHeaderProps) {
+  return (
+    <div
+      className={`max-w-2xl mb-10 ${
+        align === "center" ? "mx-auto text-center" : ""
+      }`}
+    >
+      {eyebrow && (
+        <span className="block text-xs uppercase tracking-[0.2em] text-green-moroccan font-medium mb-3">
+          {eyebrow}
+        </span>
+      )}
+      <h2 className="text-3xl md:text-4xl font-semibold text-ink leading-tight">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-4 text-ink/70 leading-relaxed">{description}</p>
+      )}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\SourceBadge.tsx =====
+
+
+type SourceBadgeProps = {
+  source: string;
+  url: string;
+  date?: string;
+};
+
+export default function SourceBadge({
+  source,
+  url,
+  date,
+}: SourceBadgeProps) {
+  return (
+    <div className="inline-flex flex-col gap-1 border-l-2 border-green-moroccan/60 pl-3 py-1 text-sm">
+      <span className="uppercase text-[10px] tracking-[0.15em] text-ink/50">
+        Source
+      </span>
+
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-ink hover:text-green-moroccan underline underline-offset-2"
+      >
+        {source}
+      </a>
+
+      {date && (
+        <span className="text-xs text-ink/50">
+          {date}
+        </span>
+      )}
+    </div>
+  );
+}
+
+
+===== C:\Users\hp\mohamed-achrourou\src\components\SourceCategories.tsx =====
+
+import Link from "next/link";
+
+const categories = [
+  { label: "Parlement officiel", href: "/sources" },
+  { label: "PAM", href: "/sources" },
+  { label: "Commune d'Oulmès", href: "/sources" },
+  { label: "Médias", href: "/media" },
+  { label: "Documents publics", href: "/transparency" },
+];
+
+export default function SourceCategories() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30 text-center">
+      <p className="text-ink/70 max-w-lg mx-auto mb-8">
+        Tout ce que vous lisez sur ce site devrait être traçable.
+      </p>
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {categories.map((cat) => (
+          <span
+            key={cat.label}
+            className="text-xs uppercase tracking-[0.1em] px-4 py-2 border border-clay/40 text-ink/70"
+          >
+            {cat.label}
+          </span>
+        ))}
+      </div>
+      <Link
+        href="/sources"
+        className="inline-block px-5 py-3 bg-ink text-ivory text-sm font-medium hover:bg-ink/90 transition-colors"
+      >
+        Explorer les sources
+      </Link>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\StatCard.tsx =====
+
+type StatCardProps = {
+  value: string;
+  label: string;
+  sublabel?: string;
+  source?: {
+    name: string;
+    url: string;
+  };
+};
+
+export default function StatCard({
+  value,
+  label,
+  sublabel,
+  source,
+}: StatCardProps) {
+  return (
+    <div className="border-t-2 border-ink/80 pt-4 flex flex-col gap-1 group relative">
+      <span className="text-4xl md:text-5xl font-semibold text-ink">
+        {value}
+      </span>
+
+      <span className="text-sm text-ink/70">{label}</span>
+
+      {sublabel && (
+        <span className="text-xs text-ink/50">{sublabel}</span>
+      )}
+
+      {source && (
+        <a
+          href={source.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] text-green-moroccan underline underline-offset-2 mt-1 w-fit"
+          title={`Source: ${source.name}`}
+        >
+          Source: {source.name}
+        </a>
+      )}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\StatsSection.tsx =====
+
+import StatCard from "./StatCard";
+import { sources } from "@/content/sources";
+
+export default function StatsSection() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-16 border-t border-clay/30">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <StatCard
+          value="31"
+          label="Questions parlementaires"
+          sublabel="2021–2026"
+          source={{
+            name: sources.parliamentProfile.name,
+            url: sources.parliamentProfile.url,
+          }}
+        />
+        <StatCard
+          value="2012–2015"
+          label="Présidence du Conseil national des ingénieurs géomètres-topographes"
+        />
+        <StatCard
+          value="2017"
+          label="Élection rapportée à la tête du groupe parlementaire PAM"
+        />
+        <StatCard
+          value="2026"
+          label="Candidat PAM"
+          sublabel="Khémisset–Oulmès"
+          source={{
+            name: sources.pam.name,
+            url: sources.pam.url,
+          }}
+        />
+      </div>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\StoryFlow.tsx =====
+
+"use client";
+
+import { motion } from "framer-motion";
+
+const steps = [
+  "Ingénierie",
+  "Expertise professionnelle",
+  "Expérience politique",
+  "Parlement",
+  "Oulmès",
+  "Candidature 2026",
+];
+
+export default function StoryFlow() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
+      <p className="text-xs uppercase tracking-[0.2em] text-green-moroccan font-medium mb-3">
+        Parcours
+      </p>
+      <h2 className="text-3xl md:text-4xl font-semibold text-ink leading-tight mb-12 max-w-2xl">
+        Un parcours entre expertise, territoire et service public
+      </h2>
+
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
+        {steps.map((step, i) => (
+          <div key={step} className="flex items-center gap-2">
+            <motion.span
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.08 }}
+              className="text-sm md:text-base font-medium text-ink border border-clay/40 px-4 py-2"
+            >
+              {step}
+            </motion.span>
+            {i < steps.length - 1 && (
+              <span className="text-clay/60 text-lg">→</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\Timeline.tsx =====
+
+import { timelineEvents } from "@/content/timeline";
+import TimelineItem from "./TimelineItem";
+
+export default function Timeline() {
+  return (
+    <div className="max-w-2xl">
+      {timelineEvents.map((event, i) => (
+        <TimelineItem
+          key={event.id}
+          event={event}
+          isLast={i === timelineEvents.length - 1}
+        />
+      ))}
+    </div>
+  );
+}
+
+===== C:\Users\hp\mohamed-achrourou\src\components\TimelineItem.tsx =====
+
+import { TimelineEvent } from "@/content/timeline";
+
+type Props = {
+  event: TimelineEvent;
+  isLast?: boolean;
+};
+
+export default function TimelineItem({ event, isLast }: Props) {
+  return (
+    <div className="relative pl-8 pb-10">
+      <span className="absolute left-0 top-1 w-3 h-3 rounded-full bg-green-moroccan" />
+
+      {!isLast && (
+        <span className="absolute left-[5px] top-4 bottom-0 w-px bg-clay/40" />
+      )}
+
+      <span className="block text-sm font-semibold text-green-moroccan mb-1">
+        {event.year}
+      </span>
+
+      <h3 className="text-lg font-medium text-ink mb-1">
+        {event.titleFr}
+      </h3>
+
+      {event.descriptionFr && (
+        <p className="text-sm text-ink/70 mb-2">
+          {event.descriptionFr}
+        </p>
+      )}
+
+      {event.source && (
+        <a
+          href={event.source.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-ink/50 underline underline-offset-2"
+        >
+          Source: {event.source.name}
+        </a>
+      )}
+    </div>
+  );
+}
