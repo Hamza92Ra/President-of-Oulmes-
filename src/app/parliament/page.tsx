@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useMemo, useState } from "react";
 import { parliamentQuestions, ParliamentCategory } from "@/content/parliament";
 import FilterBar from "@/components/FilterBar";
@@ -33,11 +31,11 @@ export default function ParliamentPage() {
           {t("parliament.title")}
         </h1>
         <p className="text-ink/70">
-          {t("parliament.description", { count: parliamentQuestions.length })}
+          {t("parliament.description").replace("{count}", parliamentQuestions.length.toString())}
         </p>
         <div className="mt-4">
           <SourceBadge
-            source={sources.parliamentProfile.name}
+            source={sources.parliamentProfile}
             url={sources.parliamentProfile.url}
           />
         </div>

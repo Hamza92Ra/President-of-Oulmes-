@@ -2,25 +2,28 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { images } from "@/config/images";
 import { projects } from "@/content/projects";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function OulmesPreview() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 border-t border-clay/30">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl md:text-3xl font-semibold text-ink">
-          Oulmès
+          {t("oulmesPreview.title")}
         </h2>
         <Link
           href="/oulmes"
           className="text-sm text-green-moroccan underline underline-offset-2 hidden md:block"
         >
-          Voir l&apos;action à Oulmès →
+          {t("oulmesPreview.seeMore")}
         </Link>
       </div>
 
       <ImagePlaceholder
         src={images.oulmesLandscape}
-        alt="Oulmès"
+        alt={t("oulmesPreview.title")}
         label="oulmes-landscape.jpg"
         aspectRatio="21/9"
         className="mb-10"
@@ -34,7 +37,7 @@ export default function OulmesPreview() {
             className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
           >
             <h3 className="text-sm font-medium text-ink mb-1">
-              {project.titleFr}
+              {lang === "en" ? project.titleEn : project.titleFr}
             </h3>
             {project.recognition && (
               <p className="text-xs text-green-moroccan">
@@ -48,7 +51,7 @@ export default function OulmesPreview() {
           className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
         >
           <h3 className="text-sm font-medium text-ink mb-1">
-            Forum de développement local
+            {t("oulmesPreview.forum")}
           </h3>
         </Link>
         <Link
@@ -56,7 +59,7 @@ export default function OulmesPreview() {
           className="border border-clay/30 p-4 hover:border-ink/40 transition-colors"
         >
           <h3 className="text-sm font-medium text-ink mb-1">
-            Programme d&apos;action communal 2023–2028
+            {t("oulmesPreview.programme")}
           </h3>
         </Link>
       </div>
@@ -65,7 +68,7 @@ export default function OulmesPreview() {
         href="/oulmes"
         className="text-sm text-green-moroccan underline underline-offset-2 mt-8 inline-block md:hidden"
       >
-        Voir l&apos;action à Oulmès →
+        {t("oulmesPreview.seeMore")}
       </Link>
     </section>
   );

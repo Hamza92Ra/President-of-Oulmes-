@@ -1,9 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/content/LanguageContext";
+
 type StatCardProps = {
   value: string;
   label: string;
   sublabel?: string;
   source?: {
-    name: string;
+    nameFr?: string;
+    nameEn?: string;
+    nameAr?: string;
+    name?: string;
     url: string;
   };
 };
@@ -14,7 +21,12 @@ export default function StatCard({
   sublabel,
   source,
 }: StatCardProps) {
-  const sourceTitle = source ? `${source.name}` : "";
+  const { lang } = useLanguage();
+
+  const sourceName = source
+    ? (lang === "ar" ? source.nameAr : lang === "en" ? source.nameEn : source.nameFr) || source.name || ""
+    : "";
+  const sourceTitle = source ? sourceName : "";
 
   return (
     <div className="border-t-2 border-ink/80 pt-4 flex flex-col gap-1 group relative">
@@ -36,7 +48,7 @@ export default function StatCard({
           className="text-[11px] text-green-moroccan underline underline-offset-2 mt-1 w-fit"
           title={sourceTitle}
         >
-          Source: {source.name}
+          Source: {sourceName}
         </a>
       )}
     </div>

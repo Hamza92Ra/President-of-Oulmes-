@@ -14,10 +14,7 @@ export default function StatsSection() {
           value="31"
           label={t("stats.parliamentaryQuestions")}
           sublabel={t("stats.period2021_2026")}
-          source={{
-            name: sources.parliamentProfile.name,
-            url: sources.parliamentProfile.url,
-          }}
+          source={sources.parliamentProfile}
         />
         <StatCard
           value="2012–2015"
@@ -31,10 +28,7 @@ export default function StatsSection() {
           value="2026"
           label={t("stats.pamCandidate")}
           sublabel={t("stats.khemissetOulmes")}
-          source={{
-            name: sources.pam.name,
-            url: sources.pam.url,
-          }}
+          source={sources.pam}
         />
       </div>
     </section>

@@ -79,7 +79,7 @@ export default function BiographyPage() {
       </section>
 
       <SourceBadge
-        source={sources.parliamentProfile.name}
+        source={sources.parliamentProfile}
         url={sources.parliamentProfile.url}
       />
     </main>

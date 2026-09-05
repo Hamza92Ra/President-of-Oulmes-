@@ -21,54 +21,47 @@ export default function MediaPage() {
 
       <section className="border border-clay/30 bg-ivory p-6 mb-8">
         <span className="inline-block text-[10px] uppercase tracking-[0.15em] bg-burgundy/10 text-burgundy px-2 py-1 mb-4">
-          Litige rapporté
+          {t("media.disputeReported")}
         </span>
 
         <h2 className="text-xl font-semibold text-ink mb-3">
-          Litige concernant un marché public — gare routière d&apos;Oulmès
-          (2025)
+          {t("media.disputeTitle")}
         </h2>
 
         <div className="space-y-4 text-ink/80 leading-relaxed">
           <div>
             <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
-              Ce qui a été rapporté
+              {t("media.reported")}
             </h3>
             <p>
-              Des reportages médiatiques en 2025 ont décrit un litige
-              concernant la procédure de passation de marché du projet de
-              gare routière d&apos;Oulmès et rapporté une plainte relative à la
-              procédure d&apos;appel d&apos;offres.
+              {t("media.disputeDescription")}
             </p>
           </div>
 
           <div>
             <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
-              Réponse officielle
+              {t("media.officialResponse")}
             </h3>
             <p className="italic text-ink/60">
-              Réponse officielle : non trouvée dans les sources examinées.
+              {t("media.responseNotFound")}
             </p>
           </div>
 
           <div>
             <h3 className="text-sm uppercase tracking-[0.1em] text-ink/50 mb-1">
-              Statut actuel
+              {t("media.currentStatus")}
             </h3>
-            <p className="italic text-ink/60">À vérifier.</p>
+            <p className="italic text-ink/60">{t("media.toVerify")}.</p>
           </div>
         </div>
 
         <p className="text-xs text-ink/50 mt-6 border-t border-clay/20 pt-4">
-          Cette page sera mise à jour si une réponse officielle vérifiée
-          devient disponible. Les allégations rapportées ne constituent pas
-          des faits établis.
+          {t("media.disclaimer")}
         </p>
       </section>
 
       <p className="text-sm text-ink/60">
-        Aucune autre controverse documentée n&apos;a été identifiée dans les
-        sources examinées à ce jour.
+        {t("media.noOtherControversies")}
       </p>
     </main>
   );

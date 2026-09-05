@@ -5,17 +5,19 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/content/LanguageContext";
 
-const recordSections = [
-  { label: "Biographie", href: "/biography" },
-  { label: "Parcours politique", href: "/timeline" },
-  { label: "Activité parlementaire", href: "/parliament" },
-  { label: "Projets locaux", href: "/projects" },
-  { label: "Sources", href: "/sources" },
-  { label: "Couverture médiatique", href: "/media" },
+const getRecordSections = (t: any) => [
+  { label: t("nav.biography"), href: "/biography" },
+  { label: t("nav.timeline"), href: "/timeline" },
+  { label: t("nav.parliament"), href: "/parliament" },
+  { label: t("nav.projects"), href: "/projects" },
+  { label: t("nav.sources"), href: "/sources" },
+  { label: t("nav.media"), href: "/media" },
 ];
 
 export default function TransparencyPage() {
   const { t } = useLanguage();
+  const recordSections = getRecordSections(t);
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader

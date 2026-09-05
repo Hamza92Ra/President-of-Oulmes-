@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Project } from "@/content/projects";
+import { useLanguage } from "@/content/LanguageContext";
 
 type Props = {
   project: Project;
@@ -7,22 +8,28 @@ type Props = {
 };
 
 export default function ProjectCard({ project, href }: Props) {
+  const { lang } = useLanguage();
+
+  const title = lang === "en" ? project.titleEn : project.titleFr;
+  const recognition = lang === "en" ? project.recognition?.en : project.recognition?.fr;
+  const description = lang === "en" ? project.descriptionEn : project.descriptionFr;
+
   return (
     <Link
       href={href}
       className="block border border-clay/30 bg-ivory p-6 hover:border-ink/40 transition-colors"
     >
       <h3 className="text-lg font-semibold text-ink mb-2">
-        {project.titleFr}
+        {title}
       </h3>
-      {project.recognition && (
+      {recognition && (
         <p className="text-sm text-green-moroccan mb-2">
-          {project.recognition.fr} — {project.recognition.date}
+          {recognition} — {project.recognition?.date}
         </p>
       )}
-      {project.descriptionFr && (
+      {description && (
         <p className="text-sm text-ink/70 line-clamp-3">
-          {project.descriptionFr}
+          {description}
         </p>
       )}
     </Link>

@@ -11,35 +11,36 @@ import MotifDivider from "@/components/MotifDivider";
 import { useLanguage } from "@/content/LanguageContext";
 
 export default function OulmesPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const oulmesAreas = [
     {
       href: "/agriculture",
-      title: t("pages.territoryAgriculture"),
-      description: "Éleveurs, race bovine Oulmès-Zaër, économie rurale.",
+      titleKey: "pages.territoryAgriculture",
+      descKey: "pages.agriculture.support",
     },
     {
       href: "/water-environment",
-      title: t("pages.water.title"),
-      description: "Accès à l'eau potable, gestion durable, écologie.",
+      titleKey: "pages.water.title",
+      descKey: "pages.water.description",
     },
     {
       href: "/health",
-      title: t("pages.health.title"),
-      description: "Réforme de la santé, personnel médical, campagnes locales.",
+      titleKey: "pages.health.title",
+      descKey: "pages.health.intro",
     },
     {
       href: "/education",
-      title: t("pages.education.title"),
-      description: "Formation, bourses, encadrement des jeunes.",
+      titleKey: "pages.education.title",
+      descKey: "pages.education.description",
     },
     {
       href: "/culture",
-      title: t("pages.culture.title"),
-      description: "Culture amazighe, régionalisation avancée.",
+      titleKey: "pages.culture.title",
+      descKey: "pages.culture.description",
     },
   ];
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeader
@@ -50,7 +51,7 @@ export default function OulmesPage() {
 
       <ImagePlaceholder
         src={images.oulmesLandscape}
-        alt="Oulmès"
+        alt={t("pages.oulmes.title")}
         label="oulmes-landscape.jpg"
         aspectRatio="21/9"
         className="mb-8"
@@ -89,8 +90,8 @@ export default function OulmesPage() {
               href={area.href}
               className="border border-clay/30 p-5 hover:border-ink/40 transition-colors"
             >
-              <h3 className="font-medium text-ink mb-2">{area.title}</h3>
-              <p className="text-sm text-ink/70">{area.description}</p>
+              <h3 className="font-medium text-ink mb-2">{t(area.titleKey)}</h3>
+              <p className="text-sm text-ink/70">{t(area.descKey)}</p>
             </Link>
           ))}
         </div>

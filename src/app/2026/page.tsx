@@ -8,7 +8,12 @@ import ImageGallery from "@/components/ImageGallery";
 import { useLanguage } from "@/content/LanguageContext";
 
 export default function Election2026Page() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+
+  const candidateName = siteConfig.name[lang] || siteConfig.name.fr;
+  const partyName = lang === "ar" ? siteConfig.party.ar : lang === "en" ? siteConfig.party.en : siteConfig.party.fr;
+  const constituencyName = siteConfig.constituency[lang] || siteConfig.constituency.fr;
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
@@ -28,7 +33,7 @@ export default function Election2026Page() {
             {t("election2026.candidate")}
           </span>
           <span className="text-lg font-medium text-ink">
-            {siteConfig.name.fr}
+            {candidateName}
           </span>
         </div>
         <div className="border-t-2 border-ink/80 pt-3">
@@ -36,7 +41,7 @@ export default function Election2026Page() {
             {t("election2026.party")}
           </span>
           <span className="text-lg font-medium text-ink">
-            {siteConfig.party.en}
+            {partyName}
           </span>
         </div>
         <div className="border-t-2 border-ink/80 pt-3">
@@ -44,7 +49,7 @@ export default function Election2026Page() {
             {t("election2026.constituency")}
           </span>
           <span className="text-lg font-medium text-ink">
-            {siteConfig.constituency.fr}
+            {constituencyName}
           </span>
         </div>
       </div>
@@ -53,7 +58,7 @@ export default function Election2026Page() {
         {t("election2026.toVerify")}
       </p>
 
-      <SourceBadge source={sources.pam.name} url={sources.pam.url} />
+      <SourceBadge source={sources.pam} url={sources.pam.url} />
     </main>
   );
 }

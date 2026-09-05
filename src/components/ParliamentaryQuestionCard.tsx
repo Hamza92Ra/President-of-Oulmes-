@@ -3,6 +3,7 @@
 import { ParliamentQuestion } from "@/content/parliament";
 import SourceBadge from "./SourceBadge";
 import { useLanguage } from "@/content/LanguageContext";
+import { localize } from "@/lib/localize";
 
 type Props = {
   question: ParliamentQuestion;
@@ -28,7 +29,7 @@ export default function ParliamentaryQuestionCard({ question }: Props) {
       </span>
 
       <h3 className="text-lg font-semibold leading-snug text-ink">
-        {lang === "fr" ? question.titleFr : lang === "ar" ? question.titleAr : question.titleEn}
+        {localize(question, "title", lang)}
       </h3>
 
       <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-ink/70">
@@ -50,15 +51,17 @@ export default function ParliamentaryQuestionCard({ question }: Props) {
 
       {question.descriptionFr && (
         <p className="text-sm text-ink/80">
-          {lang === "fr" ? question.descriptionFr : lang === "ar" ? question.descriptionAr : question.descriptionEn}
+          {localize(question, "description", lang)}
         </p>
       )}
 
       <div className="text-sm text-ink/60 italic">
-        {question.responseStatus}
+        {lang === "ar" && question.responseStatusAr
+          ? question.responseStatusAr
+          : question.responseStatus}
       </div>
 
-      <SourceBadge source={question.source.name} url={question.source.url} />
+      <SourceBadge source={question.source} url={question.source.url} />
     </div>
   );
 }

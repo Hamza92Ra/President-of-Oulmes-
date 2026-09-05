@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { forumEditions, forumThemes } from "@/content/development";
+import { forumEditions, forumThemesFr, forumThemesEn, forumThemesAr } from "@/content/development";
+import { useLanguage } from "@/content/LanguageContext";
 
 export default function ForumYearTabs() {
+  const { lang, t } = useLanguage();
   const [active, setActive] = useState(forumEditions[forumEditions.length - 1].year);
   const activeEdition = forumEditions.find((e) => e.year === active);
+  const forumThemes = lang === "ar" ? forumThemesAr : lang === "en" ? forumThemesEn : forumThemesFr;
 
   return (
     <div>
@@ -41,16 +44,14 @@ export default function ForumYearTabs() {
           transition={{ duration: 0.25 }}
         >
           {activeEdition?.hasDocumentedDetails ? (
-            <p className="text-ink/80">Détails de l&apos;édition {active}.</p>
+            <p className="text-ink/80">{t("forum.editionDetails").replace("{year}", active.toString())}</p>
           ) : (
             <div className="border border-dashed border-clay/40 p-6">
               <p className="text-ink/70 mb-4">
-                Détails spécifiques de l&apos;édition {active} du Forum de
-                développement local d&apos;Oulmès — à vérifier.
+                {t("forum.editionToVerify").replace("{year}", active.toString())}
               </p>
               <p className="text-sm text-ink/50 uppercase tracking-[0.1em] mb-3">
-                Thématiques généralement rapportées dans la couverture du
-                forum
+                {t("forum.reportedThemes")}
               </p>
               <div className="flex flex-wrap gap-2">
                 {forumThemes.map((theme) => (
