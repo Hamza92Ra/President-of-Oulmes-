@@ -45,7 +45,7 @@ export default function Hero() {
 
       <ImagePlaceholder
         src={images.hero}
-        alt="Mohamed Achrourou"
+        alt={t("ui.mohamedAchrourou")}
         label="hero-mohamed-achrourou.jpg"
         aspectRatio="4/5"
       />

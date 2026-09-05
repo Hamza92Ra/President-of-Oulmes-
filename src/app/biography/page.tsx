@@ -15,13 +15,13 @@ export default function BiographyPage() {
     <main className="max-w-4xl mx-auto px-6 py-16">
       <SectionHeader
         eyebrow={t("pages.biography.eyebrow")}
-        title="Mohamed Achrourou"
+        title={t("ui.mohamedAchrourou")}
         description={t("pages.biography.description")}
       />
 
       <ImagePlaceholder
         src={images.portrait}
-        alt="Mohamed Achrourou"
+        alt={t("ui.mohamedAchrourou")}
         label="portrait-mohamed-achrourou.jpg"
         aspectRatio="3/4"
         className="max-w-sm mb-12"

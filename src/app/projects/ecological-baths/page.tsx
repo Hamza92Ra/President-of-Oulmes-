@@ -2,6 +2,7 @@
 import SourceBadge from "@/components/SourceBadge";
 import ImageGallery from "@/components/ImageGallery";
 import { notFound } from "next/navigation";
+import { translations } from "@/i18n/translations";
 
 export default function EcologicalBathsPage() {
   const project = projects.find((p) => p.id === "ecological-baths");
@@ -10,7 +11,7 @@ export default function EcologicalBathsPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
       <span className="text-xs uppercase tracking-[0.2em] text-green-moroccan font-medium">
-        Étude de cas — Projet
+        {translations.fr.ui.caseStudyLabel}
       </span>
       <h1 className="text-3xl md:text-4xl font-semibold text-ink mt-2 mb-8">
         {project.titleFr}
@@ -24,7 +25,7 @@ export default function EcologicalBathsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
           <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
-            Projet
+            {translations.fr.ui.project}
           </h2>
           <p className="text-ink/80 leading-relaxed">
             {project.descriptionFr}
@@ -34,7 +35,7 @@ export default function EcologicalBathsPage() {
         {project.partners && (
           <div>
             <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
-              Partenaires
+              {translations.fr.ui.partners}
             </h2>
             <ul className="list-disc list-inside text-ink/80 space-y-1">
               {project.partners.map((partner) => (
@@ -48,15 +49,13 @@ export default function EcologicalBathsPage() {
       {project.recognition && (
         <div className="border-t border-clay/30 pt-6 mb-8">
           <h2 className="text-sm uppercase tracking-[0.15em] text-ink/50 mb-2">
-            Reconnaissance
+            {translations.fr.ui.recognition}
           </h2>
           <p className="text-ink/80">
             {project.recognition.fr} — {project.recognition.date}
           </p>
           <p className="text-xs text-ink/50 mt-2 italic">
-            La commune d&apos;Oulmès a reçu ce prix. Cela ne signifie pas que
-            Mohamed Achrourou a personnellement remporté un prix climatique
-            international.
+            {translations.fr.ui.awardDisclaimer}
           </p>
         </div>
       )}

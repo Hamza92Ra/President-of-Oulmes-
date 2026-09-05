@@ -46,7 +46,7 @@ export default function Navbar() {
         <button
           className="lg:hidden text-ink"
           onClick={() => setOpen(!open)}
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? t("ui.closeMenu") : t("ui.openMenu")}
           aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}

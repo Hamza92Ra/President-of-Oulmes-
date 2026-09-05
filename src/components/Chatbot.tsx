@@ -40,6 +40,25 @@ const PLACEHOLDERS: Record<Lang, string> = {
   darija: "كتب السؤال ديالك...",
 };
 
+const UI_LABELS: Record<Lang, Record<string, string>> = {
+  fr: {
+    openChatbot: "Ouvrir le chatbot",
+    send: "Envoyer",
+  },
+  en: {
+    openChatbot: "Open chatbot",
+    send: "Send",
+  },
+  ar: {
+    openChatbot: "فتح روبوت الدردشة",
+    send: "إرسال",
+  },
+  darija: {
+    openChatbot: "حل روبو ديال الدردشة",
+    send: "بعث",
+  },
+};
+
 // Greeting / small-talk words (fr, en, ar, arabizi) — recognized as such, not as topics
 const GREETING_WORDS = [
   "bonjour", "salut", "bonsoir", "coucou", "cava", "ca va",
@@ -211,7 +230,7 @@ export default function Chatbot() {
     <>
       <button
         onClick={() => setOpen((o) => !o)}
-        aria-label="Ouvrir le chatbot"
+        aria-label={UI_LABELS[lang].openChatbot}
         className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#7a1f2b] text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
       >
         {open ? <X size={24} /> : <MessageCircle size={24} />}
@@ -274,7 +293,7 @@ export default function Chatbot() {
             />
             <button
               onClick={handleSend}
-              aria-label="Envoyer"
+              aria-label={UI_LABELS[lang].send}
               className="flex h-9 w-9 items-center justify-center rounded-full bg-[#7a1f2b] text-white transition-transform hover:scale-105 active:scale-95"
             >
               <Send size={16} />

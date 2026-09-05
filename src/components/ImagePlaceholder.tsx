@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/content/LanguageContext";
 
 type ImagePlaceholderProps = {
   src: string;
@@ -19,6 +20,7 @@ export default function ImagePlaceholder({
   className = "",
 }: ImagePlaceholderProps) {
   const [failed, setFailed] = useState(false);
+  const { t } = useLanguage();
 
   if (!failed) {
     return (
@@ -45,7 +47,7 @@ export default function ImagePlaceholder({
       aria-label={alt}
     >
       <span className="text-[11px] tracking-[0.2em] uppercase font-medium">
-        Photo placeholder
+        {t("ui.photoPlaceholder")}
       </span>
       <span className="text-xs font-mono px-4 text-center">ADD: {label}</span>
     </div>

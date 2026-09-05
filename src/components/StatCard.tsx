@@ -14,6 +14,8 @@ export default function StatCard({
   sublabel,
   source,
 }: StatCardProps) {
+  const sourceTitle = source ? `${source.name}` : "";
+
   return (
     <div className="border-t-2 border-ink/80 pt-4 flex flex-col gap-1 group relative">
       <span className="text-4xl md:text-5xl font-semibold text-ink">
@@ -32,7 +34,7 @@ export default function StatCard({
           target="_blank"
           rel="noopener noreferrer"
           className="text-[11px] text-green-moroccan underline underline-offset-2 mt-1 w-fit"
-          title={`Source: ${source.name}`}
+          title={sourceTitle}
         >
           Source: {source.name}
         </a>
