@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Project } from "@/content/projects";
 import { useLanguage } from "@/content/LanguageContext";
+import { localize } from "@/lib/localize";
 
 type Props = {
   project: Project;
@@ -10,9 +11,9 @@ type Props = {
 export default function ProjectCard({ project, href }: Props) {
   const { lang } = useLanguage();
 
-  const title = lang === "en" ? project.titleEn : project.titleFr;
-  const recognition = lang === "en" ? project.recognition?.en : project.recognition?.fr;
-  const description = lang === "en" ? project.descriptionEn : project.descriptionFr;
+  const title = localize(project, "title", lang);
+  const recognition = lang === "ar" ? project.recognition?.ar : lang === "en" ? project.recognition?.en : project.recognition?.fr;
+  const description = localize(project, "description", lang);
 
   return (
     <Link

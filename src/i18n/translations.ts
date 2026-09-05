@@ -269,6 +269,18 @@ export const translations = {
                 political2026: "Candidat du PAM pour la circonscription de Khémisset–Oulmès.",
             },
         },
+        projects: {
+            status: "Statut",
+            startDate: "Date de début",
+            endDate: "Date de fin",
+            partners: "Partenaires",
+            problem: "Problème",
+            details: "Détails du projet",
+            impact: "Impact",
+            completed: "Achevé",
+            ongoing: "En cours",
+            underDevelopment: "En développement",
+        },
     },
 
     ar: {
@@ -525,6 +537,18 @@ export const translations = {
                 political2026: "مرشح الأصالة والمعاصرة للدائرة الانتخابية الخميسات–أولماس.",
             },
         },
+        projects: {
+            status: "الحالة",
+            startDate: "تاريخ البداية",
+            endDate: "تاريخ النهاية",
+            partners: "الشركاء",
+            problem: "المشكلة",
+            details: "تفاصيل المشروع",
+            impact: "التأثير",
+            completed: "منجز",
+            ongoing: "جارٍ",
+            underDevelopment: "قيد التطوير",
+        },
     },
 
     en: {
@@ -780,6 +804,18 @@ export const translations = {
                 politicalToVerify: "President of the Oulmès municipality (date of taking office to be verified).",
                 political2026: "PAM candidate for the Khémisset–Oulmès constituency.",
             },
+        },
+        projects: {
+            status: "Status",
+            startDate: "Start Date",
+            endDate: "End Date",
+            partners: "Partners",
+            problem: "Problem",
+            details: "Project Details",
+            impact: "Impact",
+            completed: "Completed",
+            ongoing: "Ongoing",
+            underDevelopment: "Under Development",
         },
     },
 } as const;
